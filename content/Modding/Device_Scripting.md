@@ -5,15 +5,9 @@
 *Scraped on: 2025-05-02 18:38:21*
 
 An example of a hackable device
-## Contents
-* *1Introduction*
-* *2Device Concepts**2.1Querying State*
-* *3Script Example*
-* *4Device Access*
-* *5Callbacks**5.1canAccess**5.2update**5.3willPrefer**5.4canBeHeardBy**5.5canNoLongerBeHeardBy**5.6OnPowerChange**5.7OnActiveChange**5.8OnAmokChange**5.9RunOnce**5.10SetValue**5.11GetValue**5.12NPCuse*
-* *6What do I do now?*
+
 # Introduction
-Device scripting is core to creating an Off Grid[Mission](Mission_Scripting.md), they are incredibly extensible and are useful for a multitude of tasks including forwarding your missions plot and world building.
+Device scripting is core to creating an Off Grid [Mission](Mission_Scripting.md), they are incredibly extensible and are useful for a multitude of tasks including forwarding your missions plot and world building.
 Each device that the player can hack into will have a device script, devices can share scripts if they're similar enough or have their own bespoke scripts.
 # Device Concepts
 Currently there are some boolean values that can be toggled on each Device.
@@ -118,40 +112,47 @@ Called at a regular interval. See also updateRate.
 | Type | Description |
 | --- | --- |
 | string | a personality string used by the Device to determine a preference |
+
 **Returns**
 | Type | Description |
 | --- | --- |
 | bool | true if the Agent should prefer this Device, false if no match |
+
 Called by the Agent to determine if that Agent would prefer to use this Device, when offered a choice of Devices. If true, the 'cost' of using this Device will decrease, thus favouring it over closer options.
 ## canBeHeardBy
 **Arguments**
 | Type | Description |
 | --- | --- |
 | string | the name of the Agent hearing this Device |
+
 Called when an Agent can hear this Device. Consider altering the Agent's world state when this occurs!
 ## canNoLongerBeHeardBy
 **Arguments**
 | Type | Description |
 | --- | --- |
 | string | the name of the Agent no longer able to hear this Device |
+
 Called when an Agent can no longer hear this Device. Less useful than canBeHeardBy, but still handy!
 ## OnPowerChange
 **Arguments**
 | Type | Description |
 | --- | --- |
 | bool | the new Power state |
+
 Called when this Device becomes powered/loses power. Note that if you have some functionality that is supposed to occur when the Power state changes, it is best to put it in here, rather than in, for example, your GUI code. Putting the code here means that if this state changes due to something other than the GUI, your Device behaves consistently. For instance, you might send some data to a Device that turns it off; adding this callback ensures that, in this instance, it behaves the same as if you turned the Device off within your GUI.
 ## OnActiveChange
 **Arguments**
 | Type | Description |
 | --- | --- |
 | bool | the new Active state |
+
 Called when this Device becomes active/inactive. Note that if you have some functionality that is supposed to occur when the Power state changes, it is best to put it in here, rather than in, for example, your GUI code. Putting the code here means that if this state changes due to something other than the GUI, your Device behaves consistently. For instance, you might send some data to a Device that turns it off; adding this callback ensures that, in this instance, it behaves the same as if you turned the Device off within your GUI.
 ## OnAmokChange
 **Arguments**
 | Type | Description |
 | --- | --- |
 | bool | the new Amok state |
+
 Called when this Device goes amok/returns to normal operation. Note that if you have some functionality that is supposed to occur when the Amok state changes, it is best to put it in here, rather than in, for example, your GUI code. Putting the code here means that if this state changes due to something other than the GUI, your Device behaves consistently. For instance, you might send some data to a Device that turns it off; adding this callback ensures that, in this instance, it behaves the same as if you turned the Device off within your GUI.
 ## RunOnce
 ## SetValue
@@ -161,6 +162,7 @@ Called when this Device goes amok/returns to normal operation. Note that if you 
 | Type | Description |
 | --- | --- |
 | string | the name of the Agent using this Device |
+
 Called when an Agent uses this Device, in the course of a UsePointAction.
 Devices can set up a callback for when they receive data, this is done by adding the following to the devices Lua table:
 ```
@@ -175,9 +177,8 @@ device = {
 The OnReceiveData callback will be triggered when the device is the recipient of the[Mission.SendData](Mission_Lua_API.md)function.
 # What do I do now?
 Now you've read through and got an idea of how to build up what your interface looks like you might be looking at ways to expand what your device does.
-What's important to remember is all[Lua Apis](Category:LuaAPI.md)are available in device scripts meaning they can:
+What's important to remember is all Lua Apis are available in device scripts meaning they can:
 * Trigger sounds
 * Start and stop particle effects
 * Complete and start new objectives
 * Send data to the player and other devices
-**Suggested next topic to read up on: [Lua Apis](Category:LuaAPI.md)**

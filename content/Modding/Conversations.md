@@ -4,19 +4,11 @@
 
 *Scraped on: 2025-05-02 18:39:07*
 
-## Contents
-* *1How to write up a crypto chat conversation*
-* *2Set up a trigger volume*
-* *3In the mission script, create the trigger*
-* *4Create the objective*
-* *5Creating the actual conversation*
-* *6Call back functions*
-* *7Single messages*
 ## How to write up a crypto chat conversation
 The in game conversations through cryptochat are an important way to deliver narrative context, tutorialisation of tools and mechanics, or telegraphing the goals and objectives you might need to, to a player playing your level.
 To start building your own conversations you only need to know the locations of two lua scripts,
-our old friend the 'Mission Script' which as a reminder sits in` Assets\StreamingAssets\Levels\*YourLevelName*\Scripts `
-and then a new script, or actually scripts, you see each conversation is its own lua script found in` Assets\StreamingAssets\Levels\NewsPaperOffice\Conversations `
+our old friend the 'Mission Script' which as a reminder sits in ` Assets\StreamingAssets\Levels\*YourLevelName*\Scripts `
+and then a new script, or actually scripts, you see each conversation is its own lua script found in ` Assets\StreamingAssets\Levels\NewsPaperOffice\Conversations `
 Create a new file for your new conversation and give it a name, it can be anything, it is only used a reference for starting the conversation, tieing the name to an objective or event can make it easier to keep in your head when and where the conversation will be called while editing them. The example we are using here is **testConversation.lua**
 The file path for the conversations lua files
 Conversations can be triggered in many different ways but the most basic example is by a trigger volume such as a mission object.
@@ -123,5 +115,5 @@ singleMessage = true
 
 ...
 ```
-Other than that, the script works exactly like normal conversations. However keep in mind that the UI is built for reasonably short single messages only, any buttons for player responses etc will not be displayed at all, and the single message window closes automatically after a while. But most importantly, because the game doesn't pause for the message and there's no guarantee the player pays any attention to it, or notices it soon enough to read it fully,**single messages should never be used for any important things.**If there's something you need the player to be aware of, use normal conversation instead (or a modal popup).
-If the*singleMessage*option is not included in the script, the game defaults to normal conversation.
+Other than that, the script works exactly like normal conversations. However keep in mind that the UI is built for reasonably short single messages only, any buttons for player responses etc will not be displayed at all, and the single message window closes automatically after a while. But most importantly, because the game doesn't pause for the message and there's no guarantee the player pays any attention to it, or notices it soon enough to read it fully,**single messages should never be used for any important things.** If there's something you need the player to be aware of, use normal conversation instead (or a modal popup).
+If the *singleMessage*option is not included in the script, the game defaults to normal conversation.

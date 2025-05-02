@@ -19,8 +19,7 @@ Conversation.StartScript(path, onCompleteCallback)
 | --- | --- |
 | path | string |
 | onCompleteCallback | Lua Type |
+
 **Description**: Starts a conversation from a name
 **Returns**: Nothing
 **Notes**: Must be in MissionFolder/Conversations/$path
-This file is auto generated, please don't edit manually!
-**Docs last hacked together on**: 23/07/2020 11:58

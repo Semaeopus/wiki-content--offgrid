@@ -4,15 +4,6 @@
 
 *Scraped on: 2025-05-02 18:39:27*
 
-## Contents
-* *1Introduction*
-* *2Example Lua script*
-* *3App configuration**3.1name**3.2description**3.3cost**3.4targets**3.5showInRadial**3.6showInAppWheel**3.7state**3.8icon**3.9iconColor**3.10statusIcons*
-* *4Actions & Options**4.1Actions table**4.2Options table*
-* *5Functions**5.1OnStateChange()**5.2UpdateActions()**5.3Update()*
-* *6Data types**6.1Target types**6.2Menu options**6.3App states**6.4time**6.5target*
-* *7Built-in functions**7.1Status window**7.1.1CreateStatusWindow()**7.1.2DisplayStatusWindow()**7.1.3RemoveStatusWindow()**7.1.4SetStatusIcon()**7.1.5SetStatusIconColor()**7.2App state**7.2.1SetState()*
-* *8Apps in your mission and other scripts**8.1Apps API*
 ## Introduction
 The main tool the player has in Off Grid (apart from clever mind and smooth stealth skills, of course) is the apps running on the player's phone, allowing both viewing and interacting with all the devices and data in the levels.
 The app system is built to allow creating all kinds of new tools, both very generic and powerful ones, but also small quality-of-life tools that just do some small very specific task, but make it more convenient for the player.
@@ -195,6 +186,7 @@ actions = {
 | name | required | The name displayed to player when showing multiple actions in RadialUI |
 | cost | optional | How many NetPoints are required to use this action |
 | run | required | Function that gets executed when the player triggers the action |
+
 The run function gets passed*target information*when the action is triggered.
 ### Options table
 Options table lets you create some additional toggleable settings for your app. They can be accessed from both AppWheel and the RadialUI by pressing the app options button (by default d-pad down on a controller). Each options represents a true/false value which you can then check elsewhere in your app script (in an action, for example) to change the app's behaviour.
@@ -218,6 +210,7 @@ options = {
 | name | required | The name displayed to player in the app options menu |
 | enabled | required | true/false. The value in your script will be sued as the starting value. |
 | OnOptionChange | required | Function that gets executed the option is toggled. |
+
 Typical use for the OnOptionChange() function would be to change the icon in app's Status window to reflect what the app is set to do at the moment.
 ## Functions
 There are a few functions that the game tries to call in different situations, so depending on the app you are making you might want to include some of these in your script.
@@ -429,4 +422,4 @@ Use`SetState(app.state)`to set the App's state on the game side to match the sta
 ## Apps in your mission and other scripts
 Some of the app functionality can be triggered from your other Lua scripts. Most commonly, you'd want use this to make apps available to the player during your mission rather than from the start, but there are of course more creative ways to make use of the API. It's worth remembering, though, that in the end it's the App's Lua script that determines what the app does, anything else can only*request*it to do something.
 ### Apps API
-The full Apps Lua API is documented[here](Apps_Lua_API.md).
+The full Apps Lua API is documented [here](Apps_Lua_API.md).

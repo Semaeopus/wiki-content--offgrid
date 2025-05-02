@@ -4,8 +4,7 @@
 
 *Scraped on: 2025-05-02 18:42:39*
 
-## Contents
-* *1Color**1.1Description**1.2Functions**1.2.1RandomColor**1.3Variables**1.4Variables**1.4.1Clear**1.4.2Black**1.4.3DarkGrey**1.4.4Grey**1.4.5LightGrey**1.4.6White**1.4.7Red**1.4.8Orange**1.4.9Yellow**1.4.10Green**1.4.11Cyan**1.4.12Blue**1.4.13Purple**1.4.14Brown*
+
 # Color
 ## Description
 Allows quick access to colours matching the Off Grid colour pallette
@@ -18,10 +17,10 @@ Color.RandomColor(alpha)
 | Name | Type |
 | --- | --- |
 | alpha | number (optional) |
+
 **Description**: Returns a random color
 **Returns**: Lua Table
 **Notes**: Defaults to full alpha, optionally pass in required alpha
-## Variables
 ## Variables
 ### Clear
 ```
@@ -135,5 +134,3 @@ Color.Brown
 | Preview | RGB |
 | --- | --- |
 |  | 0.631, 0.412, 0.275 |
-This file is auto generated, please don't edit manually!
-**Docs last hacked together on**: 23/07/2020 11:58
