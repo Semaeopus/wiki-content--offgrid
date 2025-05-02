@@ -5,10 +5,6 @@
 *Scraped on: 2025-05-02 18:43:25*
 
 Each AI's behaviour is defined by its Agent definition.
-## Contents
-* *1Concepts**1.1GOAP State**1.2Personality**1.3Statistics**1.3.1Usage / Intention*
-* *2File Format**2.1Fails**2.2World State**2.3Goals**2.4Stats**2.5Actions**2.5.1Sending Data as part of an Action**2.6Special Actions**2.6.1Patrol**2.6.2Taser**2.6.3Search**2.7Responses**2.8Reactions**2.8.1Reactions to Data**2.8.1.1One last thing...**2.9Interests**2.9.1canUse**2.9.1.1World State**2.9.2canFix*
-* *3Case Study**3.1Guard Example**3.1.1Special Action Toggles**3.1.2World State**3.1.3Stats**3.1.4Goals**3.1.5Actions**3.1.6Responses**3.1.7Reactions**3.1.8canUse*
 # Concepts
 ## GOAP State
 The World State and Goal states are made up of GOAP States. GOAP stands for "Goal-Oriented Action Planning". Each state comprises a unique string ID, and a boolean (true/false) value. The state as a whole is made up of multiple state items.
@@ -71,12 +67,23 @@ Personality Effects will be referred to throughout this, so let's dig into them 
 | adjust | number | The value to be added to the current value of this stat. Use a negative number to reduce it! |
 One of the simpler tables in the Agent Definition. Simply put, when this effect happens, the named*stat*will have*adjust*added to it. The stat will then be clamped in the range 0 - 1, and the world states that rely on it will be recalculated.
 ### Usage / Intention
-Personality Effects may or may not be a great name for these, but we are stuck with them! You may consider them to be side effects or secondary effects - things that happen as a result of an Action, that aren't to be taken into account when planning. Also, because they act upon statistics ranging from 0-1, the effects can be gradual. 
-A simple example would be a Soda machine. An Agent may plan to use the soda machine because they are thirsty, because they need energy, because they are bored - or a combination. All valid use cases. However, a side effect of drinking is the need to go to the toilet! Nobody has a drink with the aim of going to the toilet, but it's something that happens. So a Soda machine could quite feasibly stop an Agent from being thirsty (so a requirement of "isThirsty" = true, and an effect of "isThirsty" = false). But you might add a personalityEffect of "bladder-o-meter" adjust = 0.2. Thus, each time an Agent uses the Soda machine, their bladder-o-meter is incremented by 0.2. Depending on the threshold of the bladder-o-meter stat, a world state change will eventually happen, and the Agent will have to consider going to the toilet - depending on the priority of the toilet goal, of course!
+# Personality Effects
+
+Personality Effects may or may not be a great name for these, but we are stuck with them! You may consider them to be side effects or secondary effects - things that happen as a result of an Action, that aren't to be taken into account when planning. Also, because they act upon statistics ranging from 0-1, the effects can be gradual.
+
+## Example: Soda Machine
+
+A simple example would be a Soda machine. An Agent may plan to use the soda machine because they are thirsty, because they need energy, because they are bored - or a combination. All valid use cases. However, a side effect of drinking is the need to go to the toilet! 
+
+Nobody has a drink with the aim of going to the toilet, but it's something that happens. So a Soda machine could quite feasibly:
+- Stop an Agent from being thirsty (requirement of "isThirsty" = true, effect of "isThirsty" = false)
+- Add personalityEffect of "bladder-o-meter" adjust = 0.2
+
+Thus, each time an Agent uses the Soda machine, their bladder-o-meter is incremented by 0.2. Depending on the threshold of the bladder-o-meter stat, a world state change will eventually happen, and the Agent will have to consider going to the toilet - depending on the priority of the toilet goal, of course!
 # File Format
 The definition is a single table, named Agent, containing several tables that define different aspects of an Agent.
 ## Fails
-This table contains a string or strings that are turned into[AI_Gestures](AI_Gestures.md)and used when the Agent no longer has a valid goal. So if you add "Yawn", and see your agent yawning, constantly, they probably don't have anything better to do! Ensure you type the gesture precisely - it's case sensitive.
+This table contains a string or strings that are turned into [AI_Gestures](AI_Gestures.md) and used when the Agent no longer has a valid goal. So if you add "Yawn", and see your agent yawning, constantly, they probably don't have anything better to do! Ensure you type the gesture precisely - it's case sensitive.
 ## World State
 The World State is a description of everything an AI knows about, in the context of planning. It is simply a*GOAP State*.
 ## Goals
@@ -87,10 +94,20 @@ A Goal is a state that an Agent desires to be in. The planner will seek to use t
 | interrupts | boolean | Defaults to false. When set to true, this Goal will interrupt any of lower priority if it becomes achievable. For instance, chasing the player is more important than eating a snack. |
 | priority | number | The higher the priority a goal is, the more important it is. As a result it will be attempted before lower priority goals. |
 | onCompletion | table | Optional. This is a*GOAP State*that will be applied to the*World State*when this goal is successful. Useful for cyclic tasks (e.g. patrolling). |
-So the goal state is what we would like our world state to include (it doesn't have to be an exhaustive list of all the state items we know about). Any difference between goal and world mean it is a candidate for planning, where we try to use Actions we have that we are able to perform to turn our world state into the goal state. If the goal interrupts, it means that the agent will stop what its doing if it's suddenly possible for this goal to be achieved.
-The onCompletion state is useful for undoing changes made in the course of planning (or 'unlocking' state for another goal). So it might be that once your AI has patrolled you reset "patrolled" back to false so that it can patrol again.
+
+So the goal state is what we would like our world state to include (it doesn't have to be an exhaustive list of all the state items we know about). 
+
+Any difference between goal and world mean it is a candidate for planning, where we try to use Actions we have that we are able to perform to turn our world state into the goal state. 
+
+If the goal interrupts, it means that the agent will stop what its doing if it's suddenly possible for this goal to be achieved.
+
+
+The onCompletion state is useful for undoing changes made in the course of planning (or 'unlocking' state for another goal). 
+
+So it might be that once your AI has patrolled you reset "patrolled" back to false so that it can patrol again.
+
 ## Stats
-List of*Statistics*.
+List of *Statistics*.
 Statistics are adjusted by PersonalityEffects. They're used to change the world state in a gradual way - so you might have an Action that slowly makes an Agent more and more tired, eventually triggering a change in world state that allows new goals to be planned for.
 | Statistic Table | Name | Type | Description |
 | --- | --- | --- | --- |
@@ -102,6 +119,7 @@ Statistics are adjusted by PersonalityEffects. They're used to change the world 
 | --- | --- | --- | --- |
 | id | string | The name of the world state to be created. |
 | threshold | number | Threshold for this statistic. Behaviour depends upon whether this state is in the above or below table. |
+
 So, what might this look like?
 ```
 {
@@ -124,7 +142,7 @@ This stat is called happiness. It starts at 0.5. It has two world states, "elate
 ```
 Notice that this one has a single entry in both above and below, missing out the nested brackets.
 ## Actions
-An Actions is something that the AI**does**. In order to**do**it, it must have a particular world state. After having**done**it, it will change its world state.
+An Actions is something that the AI **does**. In order to **do** it, it must have a particular world state. After having **done** it, it will change its world state.
 | Action Table | Name | Description |
 | --- | --- | --- |
 | name | The name of the Action, which should be unique. |
@@ -190,12 +208,13 @@ A reaction is a method of adjusting an AI's personality stats when they do somet
 | --- | --- | --- |
 | personalityRequirement | The*requirement*, which, when reacted to, will bring about the effect. |
 | personalityEffect | The*effect*on personality stats that occurs. |
+
 Let's look at a quick example of how to use this.
 ```
 {
-		personalityEffect = { stat = "energy", adjust = -0.5 },
-		personalityRequirement = { subject = "music", other = "relaxes" },
-	}
+	personalityEffect = { stat = "energy", adjust = -0.5 },
+	personalityRequirement = { subject = "music", other = "relaxes" },
+}
 ```
 Here we have an effect that requires a personality entry that is tagged both as "music", and "relaxes". How does this get used? Well, for the purpose of this example, let's assume this AI has stepped into earshot of a radio, which has its own script. As a result, the following is called
 ```
@@ -228,9 +247,9 @@ Notice the meta table on the end. This tells the AI that the data is about "coff
 Let's make a Reaction that makes use of this.
 ```
 {
-		personalityEffect = { stat = "thirst", adjust = 0.5 },
-		personalityRequirement = { subject = "drink", other = "likes" },
-	}
+	personalityEffect = { stat = "thirst", adjust = 0.5 },
+	personalityRequirement = { subject = "drink", other = "likes" },
+}
 ```
 This Reaction is looking for something that is tagged as a drink, and that the agent likes. To complete this example, we need to inspect some personality files.
 This agent will React to this DataPoint, because they know that coffee is a drink, and they like it.
