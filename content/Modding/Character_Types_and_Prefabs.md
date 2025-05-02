@@ -4,12 +4,11 @@
 
 *Scraped on: 2025-05-02 18:39:20*
 
-## Contents
-* *1Characters**1.1Character Types and Prefabs**1.2Voice**1.3Custom LUTs and head props**1.4Virtual characters**1.5Adding Guards**1.5.1Spawn points**1.5.2Patrol route**1.5.3Profile*
 ## Characters
 Adding characters to your level is important as this will allow you to add other important systems such as conversations which is one way to introduce story elements to your level.
 To add characters to your level you must open up the mission script and locate the character table. It should look something like this:
-[[File:|frame|none|alt=|caption charactertable.png]]
+#### MISSING FILE TODO
+
 To add a character in the table you must include the following:
 * name
 * displayName
@@ -171,7 +170,7 @@ Character ={
 
 		FutureEvent = {
 			 "eat",
-		 },
-     },
+		},
     },
+},
 ```

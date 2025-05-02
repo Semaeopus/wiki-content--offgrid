@@ -4,14 +4,10 @@
 
 *Scraped on: 2025-05-02 18:41:45*
 
-## Contents
-* *1note: This is just a general overview of the process.The hyperlinks throughout this document will explain in detail each section so be sure to click them if you are unsure about anything.*
-* *2Setup**2.1Getting Started*
-* *3Level design**3.1Templates**3.2Networks**3.3Devices**3.4Characters**3.5Triggers**3.6Conversations**3.7Objectives**3.8Lighting**3.9Uploading your mod**3.10Further Reading*
 ###### note: This is just a general overview of the process.The hyperlinks throughout this document will explain in detail each section so be sure to click them if you are unsure about anything.
 ## Setup
 To Start Building your level you will need to download Unity and the support packages for Linux, pc and mac not doing this can cause errors when attempting to build your level. For an overview on setting up unity click here:[Getting Started with the LevelKit](Getting_Started_with_the_LevelKit.md)
-Before you start building your level you must set up your[IDE](Mission_Scripting.md)so that you can begin programming using Lua more effectively.
+Before you start building your level you must set up your [IDE](Mission_Scripting.md) so that you can begin programming using Lua more effectively.
 ### Getting Started
 Now that you have your IDE set up you now need to generate a level in order to create a mod. This can all be done in the[The LevelKit GUI](Getting_Started_with_the_LevelKit.md).
 The LevelKit GUI can also be used to access your mods mission script and will allow you to add the core logic to your mod.
@@ -55,4 +51,3 @@ To upload your mod:
 * Lastly select upload your mod.
 ### Further Reading
 [Modding Manual](Modding_Manual.md)
-[Lua API](Category:LuaAPI.md)

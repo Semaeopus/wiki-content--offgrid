@@ -4,10 +4,6 @@
 
 *Scraped on: 2025-05-02 18:38:15*
 
-## Contents
-* *1Colour lookup tables with UVs**1.1Colors in the textures**1.1.1Albedo**1.1.2Metallic + Smoothness**1.2Setting up the UVs*
-* *2Skin and Hair*
-* *3Character LUTs**3.1Vest**3.2LongJacket**3.3SmartSuit**3.4Waistcoat**3.5Smart Jumper*
 ## Colour lookup tables with UVs
 The characters in Off Grid use a common material which switches out Colour Lookup Tables (LUTs) to change the colour of the Character's UVs. A LUT is a colour grid, each tile in the grid corresponds to a part of the Character's body.
 Each LUT is a 64x64 pixel .png texture. Each tile in that texture is 8x8 pixels.

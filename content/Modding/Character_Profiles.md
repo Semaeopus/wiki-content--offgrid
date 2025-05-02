@@ -5,13 +5,10 @@
 *Scraped on: 2025-05-02 18:43:44*
 
 Characters in Off Grid are defined in two places. First, the character's name, type, and few other details are set in your level's mission Lua script, in the*characters*-table. Then, for certain character types, you'll also need another Lua script that describes their personality and contains a profile to describe the character's background.
-There are some pre-made personality scripts available in the[Common folder](Common_folder.md), but be aware that a background profile should be used for one character only, so if you grab a certain guard's personality script and use it in your level, that will be*the same guard that was walking around some other level*. If you want a new character, it's usually the best to just create a duplicate of one of the existing files inside your mission's folders, and edit the values to fill in some background info about your new character.
+There are some pre-made personality scripts available in the [Common folder](Common_folder.md), but be aware that a background profile should be used for one character only, so if you grab a certain guard's personality script and use it in your level, that will be*the same guard that was walking around some other level*. If you want a new character, it's usually the best to just create a duplicate of one of the existing files inside your mission's folders, and edit the values to fill in some background info about your new character.
 Another thing worth keeping in mind is that if you have same character in multiple levels, you should always use the same name for the character, both in your mission scripts and in the personality script. This makes sure the social engineering mechanics recognize that character correctly and any new information the player learns is matched with the correct profile.
 You*can*, however, use a different personality file for the same character in different missions. One reason to do so would be to have some background information about your character that the player only learns about later on in your multi-level story line.
-## Contents
-* *1Mission script and different character types**1.1Player**1.2Enemies**1.3Drones**1.4Neutral characters**1.5Virtual characters*
-* *2Character personality files*
-* *3customizing character color*
+
 ## Mission script and different character types
 ### Player
 For the player character you only need few pieces of information in the mission script. Set the*internalName*,*characterType*and*prefab*all to "player", and*spawnPoint*to name of the MissionObject you are using as player's starting location.
@@ -198,4 +195,3 @@ Character = {
 	}
 }
 ```
-## customizing character color
