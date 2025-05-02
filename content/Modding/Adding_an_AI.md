@@ -1,11 +1,8 @@
 # Adding_an_AI
 
 *Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Adding_an_AI*
-
 *Scraped on: 2025-05-02 18:40:54*
 
-## Contents
-* *1Adding AI to your level**1.1The Characters Table**1.1.1prefab**1.1.2agent**1.1.3patrolroute**1.1.4sounds**1.2SetupMission**1.3StartMission*
 # Adding AI to your level
 This page will guide you through the process of getting an AI Agent into your level. You should already have created your level, and have the mission script for it open before you start!
 ## The Characters Table
@@ -33,6 +30,7 @@ The first step is to add a table to the characters table in the mission script.
 	},
 ```
 | attribute | type | description |
+|-----------|------|-------------|
 | displayName | string | The name of the character that will be displayed in-game. |
 | internalName | string | The name that will be used within the game. This is the name that would be used with the API. |
 | prefab | string | The prefab to use. |
@@ -44,10 +42,12 @@ The first step is to add a table to the characters table in the mission script.
 | spawnpoint | string | Where the Agent will first appear. |
 | patrolroute | string | The (optional) set of points that the Agent will patrol along. |
 | sounds | string | The (optional) table of sounds specific to this character that will be used by this character when performing certain actions (see below). |
+
 Let's look at a few of these in more detail.
 ### prefab
 These are currently hard coded. This will be changing in time. The current options are:
 | prefab name | description |
+|-------------|-------------|
 | player | Joe, our protagonist. |
 | hugeGuard | A big, burly male. |
 | Secretary | Female office worker. Also can be seen as the leader of the shady government forces in the intro. |
