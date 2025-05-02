@@ -4,8 +4,6 @@
 
 *Scraped on: 2025-05-02 18:43:32*
 
-## Contents
-* *1Introduction**1.1CCTVDome**1.2SodaMachine**1.3CCTV_01**1.4DesktopRadio**1.5HandDryer_01**1.6IDcard_01**1.7iDeskLamp**1.8Laptop**1.9Mod_WaterPumpDevice_01**1.10Printer**1.11Server Computer**1.12Server Full**1.13Smart Fridge**1.14SmartThermostat**1.15SmartWater Bottle**1.16Soda Fountain*
 # Introduction
 We have a slew of ready-to-use hackable devices that can be dropped into your level straight away.
 These are located in: ...Folder in the Project....

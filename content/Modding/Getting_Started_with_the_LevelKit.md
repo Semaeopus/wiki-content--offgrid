@@ -4,15 +4,10 @@
 
 *Scraped on: 2025-05-02 18:43:51*
 
-## Contents
-* *1Getting Started*
-* *2The LevelKit GUI**2.1Create Tab**2.2Build Tab**2.3Tweaks Tab**2.4Validate Tab**2.5Networking Tab*
-* *3Your mission folder*
-* *4Building your First Level*
 ## Getting Started
-1. Download[Unity](https://web.archive.org/web/20200803173057/https://store.unity.com/download?ref=update). You will need the most up to date version, and to have installed the following components:... (Fill in required components here) gardless of whether you are using the Win/Mac/Linux build of the Unity Editor.
+1. Download [Unity](https://web.archive.org/web/20200803173057/https://store.unity.com/download?ref=update). You will need the most up to date version, and to have installed the following components:... (Fill in required components here) gardless of whether you are using the Win/Mac/Linux build of the Unity Editor.
 3. [Download LevelKit](Download_LevelKit.md)(If you have been given BETAS access then use the properties / BETAS window and put in the password you have been given for both the game *and* for Levelkit - they have to be done separately)
-4. [Open up the LevelKit project in Unity](Open_up_the_LevelKit_project_in_Unity.md)Make sure to MOVE the level kit folder out of Steam apps and into a safe folder in your User account to prevent steam from overwriting in an update
+4. [Open up the LevelKit project in Unity](Open_up_the_LevelKit_project_in_Unity.md) Make sure to MOVE the level kit folder out of Steam apps and into a safe folder in your User account to prevent steam from overwriting in an update
 Now go to the menu Item for Off Grid and select 'LevelKit Tool'
 Where to find the LevelKit Tools window
 ## The LevelKit GUI
@@ -69,4 +64,4 @@ Your mission folder contains all the files that the game will read when loading 
 | Scripts/Conversations/ | Your[conversation scripts](Conversations.md)should be placed here |
 | Scripts/Devices/ | Your[device scripts](Device_Scripting.md)should be placed here |
 ## Building your First Level
-This will take you on a tour around the wiki and the Levelkit[click here to get started](Building_your_First_Level.md)
+This will take you on a tour around the wiki and the Levelkit [click here to get started](Building_your_First_Level.md)

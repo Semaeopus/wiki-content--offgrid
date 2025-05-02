@@ -4,8 +4,6 @@
 
 *Scraped on: 2025-05-02 18:43:38*
 
-## Contents
-* *1Sound**1.1Description**1.2Functions**1.2.1TriggerEvent**1.2.2SetRTPC*
 # Sound
 ## Description
 The sound API allows modders to trigger sound events in game
@@ -19,6 +17,7 @@ Sound.TriggerEvent(eventName, sourceName)
 | --- | --- |
 | eventName | string |
 | sourceName | string |
+
 **Description**: Triggers a sound even with name*eventName*
 **Returns**: The event id, this can be used in other sound API functions (see*StopAudio*)
 **Notes**: If _sourceName_ is not provided the sound will be played as a '2D' event
@@ -32,8 +31,7 @@ Sound.SetRTPC(sourceName, RTPCName, value)
 | sourceName | string |
 | RTPCName | string |
 | value | number |
+
 **Description**: Set Real-Time Parameter Curve for an audio event playign on this object
 **Returns**: Nothing
 **Notes**: You need to have started an audio event on this object before tryign to use SetRTPC, and that event must have RTPC control for something.
-This file is auto generated, please don't edit manually!
-**Docs last hacked together on**: 23/07/2020 11:58

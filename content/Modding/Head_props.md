@@ -4,14 +4,6 @@
 
 *Scraped on: 2025-05-02 18:40:19*
 
-## Contents
-* *1Introduction*
-* *2Script Example*
-* *3Hair Prop List*
-* *4Facial Hair Prop List*
-* *5Hats Prop List*
-* *6Glasses Prop List*
-* *7Miscellaneous Head Prop List*
 ## Introduction
 When setting up a character in Mission Script it's possible to define their head props, like hair, hats, glasses and earpieces. There is no limit to the number of props used in a character (apart from how well all the props fit together). If nothing is defined then the character will use whatever default props the character prefab might have.
 ## Script Example

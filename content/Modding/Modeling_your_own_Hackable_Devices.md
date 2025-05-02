@@ -4,12 +4,6 @@
 
 *Scraped on: 2025-05-02 18:41:22*
 
-## What's Required for a Hackable Object
-fig 0.1
-Hackable Objects should have some way to indicate benfg powered / active. This could be a lights, a screen, both, or something else. If you go for a light or a screen, need to be separate objects so the Materials can be switched around to show whether the Object has been Hacked or not.
-If a Hackable Object has a screen we recommend conforming to either a 4x3 or 16x9 ratio. 4x3 is slightly more square and 16x9 is more rectangular. Having thse fixed ratios means it's easier to switch different screen graphics between different objects and have them all work in a consistent way.
-4x3 Guide
-16x9 Guide
 ## How to create a Screen for a Hackable Object
 Blender is used for this tutorial. The Model for this Fuse Box is already finished, it requires a screen.
 Step 1

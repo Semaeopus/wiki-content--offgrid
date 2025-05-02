@@ -4,8 +4,6 @@
 
 *Scraped on: 2025-05-02 18:37:35*
 
-## Contents
-* *1Debug**1.1Description**1.2Functions**1.2.1ConnectToDevLaptop**1.2.2ShowPlayerPath*
 # Debug
 ## Description
 Debugging & Testing tools
@@ -24,7 +22,6 @@ Debug.ShowPlayerPath(value)
 | Name | Type |
 | --- | --- |
 | value | bool |
+
 **Description**: ShowPlayerPath
 **Returns**: Nothing
-This file is auto generated, please don't edit manually!
-**Docs last hacked together on**: 23/07/2020 11:58

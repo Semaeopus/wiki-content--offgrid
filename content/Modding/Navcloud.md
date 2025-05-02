@@ -4,10 +4,6 @@
 
 *Scraped on: 2025-05-02 18:40:15*
 
-## Contents
-* *1Introduction*
-* *2Set Navcloud Boundaries*
-* *3Navcloud Generation*
 ## Introduction
 Navcloud is used to define the area where drones can move, and to provide them wiht environment data they need to navigate around.
 ## Set Navcloud Boundaries

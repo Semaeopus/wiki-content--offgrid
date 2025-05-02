@@ -4,8 +4,6 @@
 
 *Scraped on: 2025-05-02 18:41:57*
 
-## Contents
-* *1Flutter**1.1Description**1.2Tables**1.2.1FlutterMessage**1.3Functions**1.3.1SendMessageFromCharacter**1.3.2SendRandomMessageFromCharacter**1.3.3SendRandomMessage**1.3.4SetFlutterEnabled*
 # Flutter
 ## Description
 The Flutter API allows modders to send Flutter messages
@@ -28,6 +26,7 @@ Flutter.SendMessageFromCharacter(message, internalName)
 | --- | --- |
 | message | Lua Type |
 | internalName | string |
+
 **Description**: Sends a custom FlutterMessage from NPC in current level
 **Returns**: Nothing
 ### SendRandomMessageFromCharacter
@@ -38,12 +37,14 @@ Flutter.SendRandomMessageFromCharacter(internalName)
 | Name | Type |
 | --- | --- |
 | internalName | string |
+
 **Description**: Sends a generated Flutter message from NPC in current level
 **Returns**: Nothing
 ### SendRandomMessage
 ```
 Flutter.SendRandomMessage()
 ```
+
 **Description**: Sends a generated Flutter message from generated random character
 **Returns**: Nothing
 ### SetFlutterEnabled
@@ -54,7 +55,6 @@ Flutter.SetFlutterEnabled(enabled)
 | Name | Type |
 | --- | --- |
 | enabled | bool |
+
 **Description**: Set Flutter app enabled or disabled.
 **Returns**: Nothing
-This file is auto generated, please don't edit manually!
-**Docs last hacked together on**: 23/07/2020 11:58

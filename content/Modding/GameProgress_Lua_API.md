@@ -4,8 +4,6 @@
 
 *Scraped on: 2025-05-02 18:37:52*
 
-## Contents
-* *1GameProgress**1.1Description**1.2Functions**1.2.1GetValue**1.2.2SetValue**1.2.3HasKey*
 # GameProgress
 ## Description
 The GameProgress api allows the modder to control and query the state of the players game progress
@@ -18,6 +16,7 @@ GameProgress.GetValue(key)
 | Name | Type |
 | --- | --- |
 | key | string |
+
 **Description**: Returns a value from the game progress by key, empty string if it doesn't exist
 **Returns**: string
 ### SetValue
@@ -30,6 +29,7 @@ GameProgress.SetValue(key, value, overwrite)
 | key | string |
 | value | string |
 | overwrite | bool (optional) |
+
 **Description**: Sets a value in the game progress
 **Returns**: Nothing
 ### HasKey
@@ -40,6 +40,7 @@ GameProgress.HasKey(key)
 | Name | Type |
 | --- | --- |
 | key | string |
+
 **Description**: Does the specified key exist?
 **Returns**: bool
 This file is auto generated, please don't edit manually!

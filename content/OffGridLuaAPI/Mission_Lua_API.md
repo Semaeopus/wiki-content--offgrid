@@ -4,8 +4,6 @@
 
 *Scraped on: 2025-05-02 18:40:26*
 
-## Contents
-* *1Mission**1.1Description**1.2Functions**1.2.1MissionStarted**1.2.2MissionCompleted**1.2.3MissionFailed**1.2.4SpawnCharacter**1.2.5ObjectiveIsActive**1.2.6ObjectiveIsCompleted**1.2.7StartObjective**1.2.8CompleteObjective**1.2.9GetCurrentObjective**1.2.10TriggerAutoSave**1.2.11DevicesConnected**1.2.12SetPlayerControlled**1.2.13GetBool**1.2.14SetBool**1.2.15GetString**1.2.16SetString**1.2.17GetNumber**1.2.18SetNumber**1.2.19StartVibrationEvent**1.2.20StopVibrationEvent*
 # Mission
 ## Description
 The Mission API controls the flow of the mission, this includes starting and stopping the mission, and dealing with objectives and other mission-related information
@@ -14,6 +12,7 @@ The Mission API controls the flow of the mission, this includes starting and sto
 ```
 Mission.MissionStarted()
 ```
+
 **Description**: This should be called once the initial state of the mission has been set
 						It will cause the game to begin gameplay
 **Returns**: Nothing
@@ -21,6 +20,7 @@ Mission.MissionStarted()
 ```
 Mission.MissionCompleted()
 ```
+
 **Description**: This should be called when the final objective of the mission has been completed
 						It will trigger the game to fade to black and return to the main menu
 **Returns**: Nothing
@@ -28,6 +28,7 @@ Mission.MissionCompleted()
 ```
 Mission.MissionFailed()
 ```
+
 **Description**: This function will fail the current mission, as if Joe had been tazed (or similar).
 **Returns**: Nothing
 ### SpawnCharacter
@@ -38,6 +39,7 @@ Mission.SpawnCharacter(internalName)
 | Name | Type |
 | --- | --- |
 | internalName | string |
+
 **Description**: Spawn a registered character in the game
 **Returns**: Nothing
 ### ObjectiveIsActive
@@ -48,6 +50,7 @@ Mission.ObjectiveIsActive(objectiveName)
 | Name | Type |
 | --- | --- |
 | objectiveName | string |
+
 **Description**: Returns true if objective has been started but not completed yet.
 **Returns**: bool
 ### ObjectiveIsCompleted
@@ -58,6 +61,7 @@ Mission.ObjectiveIsCompleted(objectiveName)
 | Name | Type |
 | --- | --- |
 | objectiveName | string |
+
 **Description**: Returns true if objective has been completed.
 **Returns**: bool
 ### StartObjective
@@ -68,6 +72,7 @@ Mission.StartObjective(objectiveName)
 | Name | Type |
 | --- | --- |
 | objectiveName | string |
+
 **Description**: Start the provided objective
 **Returns**: Nothing
 ### CompleteObjective
@@ -78,24 +83,28 @@ Mission.CompleteObjective(objectiveName)
 | Name | Type |
 | --- | --- |
 | objectiveName | string |
+
 **Description**: Complete the provided objective
 **Returns**: Nothing
 ### GetCurrentObjective
 ```
 Mission.GetCurrentObjective()
 ```
+
 **Description**: Get the name of the current objective
 **Returns**: string
 ### TriggerAutoSave
 ```
 Mission.TriggerAutoSave()
 ```
+
 **Description**: Triggers an autosave, only if the game is current in a mission
 **Returns**: Nothing
 ### DevicesConnected
 ```
 Mission.DevicesConnected()
 ```
+
 **Description**: Call this AFTER all Devices have been connected to their networks. This allows DataPoints to be processed correctly.
 **Returns**: Nothing
 ### SetPlayerControlled
@@ -106,6 +115,7 @@ Mission.SetPlayerControlled(tf)
 | Name | Type |
 | --- | --- |
 | tf | bool |
+
 **Description**: Set whether the player is currently in control (or not). Used for cutscenes, and other things that we haven't thought of yet.
 **Returns**: Nothing
 ### GetBool
@@ -116,6 +126,7 @@ Mission.GetBool(key)
 | Name | Type |
 | --- | --- |
 | key | string |
+
 **Description**: Get a boolean value of a key in mission Lua script. Returns false if key doesn't exist.
 **Returns**: bool
 ### SetBool
@@ -127,6 +138,7 @@ Mission.SetBool(key, newBool)
 | --- | --- |
 | key | string |
 | newBool | bool |
+
 **Description**: Sets a boolean value of a key in mission Lua script.
 **Returns**: Nothing
 ### GetString
@@ -137,6 +149,7 @@ Mission.GetString(key)
 | Name | Type |
 | --- | --- |
 | key | string |
+
 **Description**: Get a string value of a key in mission Lua script. Returns empty if key doesn't exist.
 **Returns**: string
 ### SetString
@@ -148,6 +161,7 @@ Mission.SetString(key, newString)
 | --- | --- |
 | key | string |
 | newString | string |
+
 **Description**: Sets a string value of a key in mission Lua script.
 **Returns**: Nothing
 ### GetNumber
@@ -158,6 +172,7 @@ Mission.GetNumber(key)
 | Name | Type |
 | --- | --- |
 | key | string |
+
 **Description**: Get a numeric value of a key in mission Lua script. Returns 0 if key doesn't exist.
 **Returns**: number
 ### SetNumber
@@ -169,6 +184,7 @@ Mission.SetNumber(key, newValue)
 | --- | --- |
 | key | string |
 | newValue | number |
+
 **Description**: Sets a numeric value of a key in mission Lua script.
 **Returns**: Nothing
 ### StartVibrationEvent
@@ -179,6 +195,7 @@ Mission.StartVibrationEvent(objectName)
 | Name | Type |
 | --- | --- |
 | objectName | string |
+
 **Description**: Start a mission object vibration event
 **Returns**: Nothing
 ### StopVibrationEvent
@@ -189,7 +206,6 @@ Mission.StopVibrationEvent(objectName)
 | Name | Type |
 | --- | --- |
 | objectName | string |
+
 **Description**: Stop a mission object vibration event
 **Returns**: Nothing
-This file is auto generated, please don't edit manually!
-**Docs last hacked together on**: 23/07/2020 11:58

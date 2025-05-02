@@ -4,8 +4,6 @@
 
 *Scraped on: 2025-05-02 18:41:10*
 
-## Contents
-* *1AI**1.1Description**1.2Functions**1.2.1Pause**1.2.2Unpause**1.2.3IsPaused**1.2.4AddTemporaryGoal**1.2.5AlterNPCMotivation**1.2.6AlterNPCWorldState**1.2.7FavourInterest**1.2.8AvoidInterest**1.2.9ChangeSubject**1.2.10ReactTo**1.2.11CreateReactable**1.2.12SetNPCFavouredComputer*
 # AI
 ## Description
 API to control the logic of AI in the mission
@@ -15,9 +13,11 @@ API to control the logic of AI in the mission
 AI.Pause(characterName)
 ```
 **Expected parameter types**
+
 | Name | Type |
 | --- | --- |
 | characterName | string |
+
 **Description**: Pauses the agent, and stops it from doing anything.
 **Returns**: Nothing
 **Notes**: The AI will be hidden from networks, meaning it will no longer interact with devices or send/receive messages.
@@ -29,6 +29,7 @@ AI.Unpause(characterName)
 | Name | Type |
 | --- | --- |
 | characterName | string |
+
 **Description**: Unpauses a hidden agent, resuming standard behaviour.
 **Returns**: Nothing
 ### IsPaused
@@ -39,6 +40,7 @@ AI.IsPaused(characterName)
 | Name | Type |
 | --- | --- |
 | characterName | string |
+
 **Description**: Returns a bool based on if a character is currently paused or not
 **Returns**: bool
 ### AddTemporaryGoal
@@ -50,6 +52,8 @@ AI.AddTemporaryGoal(characterName, goal)
 | --- | --- |
 | characterName | string |
 | goal | Lua Table |
+
+
 **Description**: Adds a goal, taking top priority, to the named AI
 **Returns**: Nothing
 **Notes**: This goal will be removed from the AI once complete. If it isn't achievable it will be removed immediately.
@@ -62,6 +66,8 @@ AI.AlterNPCMotivation(characterName, motivationDelta)
 | --- | --- |
 | characterName | string |
 | motivationDelta | number |
+
+
 **Description**: Alters an NPCS motivation state
 **Returns**: Nothing
 **Notes**: When an NPCs motivation hits 0, they're no longer motivated and will attempt to take a break
@@ -75,6 +81,7 @@ AI.AlterNPCWorldState(characterName, state, value)
 | characterName | string |
 | state | string |
 | value | Lua Type |
+
 **Description**: Change the World State of an NPC.
 **Returns**: Nothing
 ### FavourInterest
@@ -87,6 +94,7 @@ AI.FavourInterest(characterName, device, permanent)
 | characterName | string |
 | device | string |
 | permanent | bool |
+
 **Description**: Reduce the cost of an AI using a particular Interest
 **Returns**: Nothing
 **Notes**: If permanent is false, the cost will revert to normal the next time this is successfully used
@@ -100,6 +108,7 @@ AI.AvoidInterest(characterName, device, permanent)
 | characterName | string |
 | device | string |
 | permanent | bool |
+
 **Description**: Increase the cost of an AI using a particular Interest
 **Returns**: Nothing
 **Notes**: If permanent is false, the cost will revert to normal the next time this is successfully used
@@ -113,6 +122,7 @@ AI.ChangeSubject(characterName, subject, value)
 | characterName | string |
 | subject | string |
 | value | string |
+
 **Description**: Set the value of a particular subject, enabling Actions with Personality requirements
 **Returns**: Nothing
 **Notes**: value can be null or empty (to unset/reset the subject)
@@ -126,6 +136,7 @@ AI.ReactTo(characterName, subject, value)
 | characterName | string |
 | subject | string |
 | value | string |
+
 **Description**: Much like ChangeSubject, but instead of enabling Actions, this will alter stats within the Agent, modifying its WorldState (and as a result, enabling Actions)
 **Returns**: Nothing
 **Notes**: value can be null or empty (to unset/reset the subject)
@@ -139,6 +150,7 @@ AI.CreateReactable(actionType, attraction, targetObject)
 | actionType | AIReaction+Type |
 | attraction | number |
 | targetObject | MissionObject |
+
 **Description**: Create a new distraction that AI can pick up on
 **Returns**: Nothing
 ### SetNPCFavouredComputer
@@ -150,7 +162,6 @@ AI.SetNPCFavouredComputer(characterName, computer)
 | --- | --- |
 | characterName | string |
 | computer | MissionObject |
+
 **Description**: Set NPC's computer, this will be used for a variety of actions
 **Returns**: Nothing
-This file is auto generated, please don't edit manually!
-**Docs last hacked together on**: 23/07/2020 11:58

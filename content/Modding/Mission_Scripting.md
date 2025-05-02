@@ -4,23 +4,21 @@
 
 *Scraped on: 2025-05-02 18:38:54*
 
-## Contents
-* *1Intro*
-* *2Pre-requisites**2.1IDE**2.2LevelKit & Game*
-* *3The Mission Script Structure**3.1Mission table**3.1.1Initial Mission State**3.1.2State**3.1.3Characters**3.1.4Physical Items**3.1.5Data**3.1.6Networks**3.1.7Devices**3.1.8Objectives**3.2Starting the mission**3.2.1Mission Setup**3.2.1.1Adding in Characters**3.2.1.2Connect Doors to the Network and set Zones**3.2.2Mission Start*
-* *4Including other files*
 ## Intro
 This article will describe everything you need to know in order to understand how to write and modify missions scripts in Off Grid!
 Mission scripts can get a little bit large but don't let that overwhelm you, they're deceptively simple, we promise!
 ## Pre-requisites
-All modding scripts for Off Grid are written in Lua, it's a lovely little language which is simple (*don't tell it I said that*) and extensible thanks to the marvellous[MoonSharp](https://web.archive.org/web/20200807124924/http://www.moonsharp.org/).
+All modding scripts for Off Grid are written in Lua, it's a lovely little language which is simple (*don't tell it I said that*) and extensible thanks to the marvellous [MoonSharp](https://web.archive.org/web/20200807124924/http://www.moonsharp.org/).
 Lua is quite easy to pick up, even people with no programming experience should be able to get hacking in next to no time!
 You'll need the following tools for editing and writing new mission scripts:
 ### IDE
-Firstly you'll need an[IDE](Integrated_development_environment.md), we recommend the[Atom](https://web.archive.org/web/20200807124924/https://atom.io/)with the following extensions:
+Firstly you'll need an[IDE](Integrated_development_environment.md), we recommend the [Atom](https://atom.io/) with the following extensions:
+| NAME | Description |
+|------|-------------|
 | [language-lua](https://web.archive.org/web/20200807124924/https://atom.io/packages/language-lua) | Syntax highlighting for Lua |
 | [autocomplete-lua](https://web.archive.org/web/20200807124924/https://atom.io/packages/autocomplete-lua) | Auto-complete support for Lua, we recommend enabling the "Override lower priority providers" in the plugin settings |
-You might also want to get our[Atom Snippets](Atom_Snippets.md)code and copy&paste it into Atom's Snippets file to add nice autocompletion for Off Grid API.
+
+You might also want to get our [Atom Snippets](Atom_Snippets.md)code and copy&paste it into Atom's Snippets file to add nice autocompletion for Off Grid API.
 ### LevelKit & Game
 Both of these are needed in order to run and test and scripts you create
 **TO DO**
@@ -69,7 +67,8 @@ In this example we've added Joe, the protagonist of Off Grid. Here's a break dow
 | characterType | The 'type' of the character, see[Character Types and Prefabs](Character_Types_and_Prefabs.md)for more information on possible values |
 | 'prefab' | The prefab for the character, see[Character Types and Prefabs](Character_Types_and_Prefabs.md)for more information on possible values |
 | spawnpoint | The name of the spawn mission object, the position of this object will be where the character is spawned |
-The*characters*table can hold information on as many characters as you'd like to fill the mission with, they won't be spawned into the mission until you decide (more on that later)
+
+The *characters* table can hold information on as many characters as you'd like to fill the mission with, they won't be spawned into the mission until you decide (more on that later)
 #### Physical Items
 ```
 -- Inventory items:
@@ -84,9 +83,9 @@ The*characters*table can hold information on as many characters as you'd like to
 		},
 	},
 ```
-The*items*table contains information about physical items that the player will be able to add to their inventory over the course of the mission, in this example we're marking up a USB dongle that the player can plug into computers
-| Item Table | Name | Description |
-| --- | --- | --- |
+The *items* table contains information about physical items that the player will be able to add to their inventory over the course of the mission, in this example we're marking up a USB dongle that the player can plug into computers
+| Item Table | Description |
+| --- | --- |
 | displayName | The display name of the item, this is what will be displayed in the games UI |
 | description | The description of the item, this will be displayed to users in the players inventory UI |
 | uiSpriteName | The path to the image file to be used for the item in game menus. |
@@ -110,8 +109,8 @@ Available data types: generic, text, SMS, encrypted, audio, video, location, key
 	},
 ```
 The data table contains data that's specific to your mission, in this example we're defining the players[PGP](Pretty_Good_Privacy.md)encryption key
-| Data Table | Name | Description |
-| --- | --- | --- |
+| Data Table |Description |
+| --- | --- |
 | name | The display name of the data, this is what will be displayed in the games UI |
 | immutable | Optional. Is the data immutable? If true the player won't be able to delete it, this is useful for data items that are part of mission objectives |
 | dataType | The type of the data, this is used for displaying the data correctly. Available DataTypes are listed in[Constants page](Constants_Lua_API.md). |
@@ -132,11 +131,12 @@ The data table contains data that's specific to your mission, in this example we
 	},
 ```
 The networks table contains all the information about the possible networks in your game, networks can be of different types such as mobile networks, WiFi, and mesh
-| Network Table | Name | Description |
-| --- | --- | --- |
+| Network Table | Name |
+| --- | --- |
 | name | The name of the network (Must be unique!) |
 | networkType | The type of the network. |
 | allowPlayerDisconnect | Is the player allowed to disconnect from the network? |
+
 Data sent at higher access levels across a network won't be visible to devices that are connected at a lower access level.
 #### Devices
 ```
@@ -152,7 +152,7 @@ devices = {
 | --- | --- | --- |
 | dataColor | The color used when displaying data from this device. |
 | owner | Optional. The internalName of the device's owner. Use this if you want too restrict device's access based on owner's metadata or something. |
-| script | The script that defines the GUI and the behaviour of the device ( See[device scripts](Device_Scripting.md)for more information ) |
+| script | The script that defines the GUI and the behaviour of the device ( See [device scripts](Device_Scripting.md) for more information ) |
 #### Objectives
 ```
 -- Mission objectives:
@@ -218,7 +218,7 @@ This will add in all of your created elements into your level, below you will se
 ```
 This part of the code shows the format of spawning in characters - this includes the player and any NPCs like the guards, which you will have created further up in your Mission Script. If the title of your character table for your player was called`jenson`, you would simply change`Mission.SpawnCharacter("player")`to`Mission.SpawnCharacter("jenson")`, this would now let your new character spawn in.
 ##### Connect Doors to the Network and set Zones
-Once you have[created doors](Setting_up_Doors.md)you can then also add them to a network. Network-connected doors arre controlled by the electronic lock systems in the buildings and opened by specific access keys. Firstly you add the door to a network, then you can set the door's zone to require a specific key to open it. For example where if you consider the following command to set keys:`Doors.SetZoneKeys("Offices", {"admins", "janitors"})`,`"Offices"`is the name of the zone the door is assigned to, and`{"admins", "janitors"}`telsl that all doors belonging to this zone should be possible to open using either "admin" or "janitors" keys.
+Once you have [created doors](Setting_up_Doors.md) you can then also add them to a network. Network-connected doors arre controlled by the electronic lock systems in the buildings and opened by specific access keys. Firstly you add the door to a network, then you can set the door's zone to require a specific key to open it. For example where if you consider the following command to set keys:`Doors.SetZoneKeys("Offices", {"admins", "janitors"})`,`"Offices"`is the name of the zone the door is assigned to, and`{"admins", "janitors"}`telsl that all doors belonging to this zone should be possible to open using either "admin" or "janitors" keys.
 #### Mission Start
 StartMission() is ran when the mission is started form the beginning. When loading a save or checkpoint, the same things would be covered by data loaded from the save instead. Use this to set initial state of things in your level.
 ```
