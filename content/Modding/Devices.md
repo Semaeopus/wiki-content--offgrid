@@ -4,10 +4,6 @@
 
 *Scraped on: 2025-05-02 18:43:18*
 
-## Contents
-* *1A Device GameObject**1.1MissionObject**1.2Hackable Component*
-* *2Hackable Reference**2.1Device Power: true/false**2.2Set Active: true/false**2.3Device Amok: true/false**2.4Run Once**2.5Set Value**2.6Inventory**2.7Events**2.7.1Power On**2.7.2Power Off**2.7.3Active On**2.7.4Active Off**2.7.5Amok On**2.7.6Amok Off**2.7.7Run Once**2.7.8NPC Use*
-* *3Further Resources*
 # A Device GameObject
 First of all, make sure the*Tag*of the GameObject is HackableDevice, and that it's on layer*MissionObjects*.
 There are a few prerequisite components needed to set up your Device for hacking.
@@ -48,5 +44,5 @@ This fires whenever RunOnce is called. This could be reasonably frequently. RunO
 ### NPC Use
 This fires whenever an NPC uses an InterestPoint, if that InterestPoint has a Device.
 # Further Resources
-This is all done in the[Device Scripting](Device_Scripting.md)page.
-To know what things devices can do you can reference the[Devices Lua API](Devices_Lua_API.md).
+This is all done in the [Device Scripting](Device_Scripting.md) page.
+To know what things devices can do you can reference the [Devices Lua API](Devices_Lua_API.md).
