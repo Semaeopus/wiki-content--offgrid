@@ -1,4 +1,4 @@
-AI Gestures [ai_gestures]
+AI Gestures [ai gestures]
 ===========
 
 Description

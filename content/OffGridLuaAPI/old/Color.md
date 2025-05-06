@@ -54,7 +54,7 @@ and alpha upper and lower limits
 Variables
 ---------
 
-Variables [variables_1]
+Variables [variables 1]
 ---------
 
 ### Clear

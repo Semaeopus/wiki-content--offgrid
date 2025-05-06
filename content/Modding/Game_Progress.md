@@ -62,4 +62,4 @@ If you for some reason end needing to edit the level.json file by hand, you'll n
 }
 ```
 ## Using GameProgress in mission scripts, conversations etc
-You can check if a value exists in GameProgress, read the value, change it or add new one from any Lua script in Off Grid. This is all done using the [GameProgress Lua API](GameProgress_Lua_API.md).
+You can check if a value exists in GameProgress, read the value, change it or add new one from any Lua script in Off Grid. This is all done using the [GameProgress Lua API](GameProgress_Lua API).

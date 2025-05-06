@@ -10,22 +10,22 @@ It can be anything really, but to to make full use of the options available eith
 * Choose from the Hackable Devices Collection scene in LevelKit.
 The scene to pick hackable objects from
 * Piece your own together from pre-made models and parts of models in the LevelKit>Models>Props>Devices and it's sub-folder 'ModularTechParts'
-* or follow this guide to [Modeling your own Hackable Devices](Modeling_your_own_Hackable_Devices.md)
+* or follow this guide to [Modeling your own Hackable Devices](Modeling_your_own_Hackable Devices)
 ## Add the Hackable component
-Decide how you want it too behave in it's different states, as explained on the[Devices](Devices.md)page.
+Decide how you want it too behave in it's different states, as explained on the[Devices](Devices)page.
 Eg. 
 Amok() sets of a sparks particle effect 
 RunOnce() spits out a sheet of paper
 Create the corresponding effects, animations or behaviours you want and connect them to the corresponding Unity Events in the Hackable component
 ## Add the MissionObject component
-This is explained in more depth in the [Mission Objects](Mission_Objects.md) page, but essentially in this example we just need to add the MissionObject component and set it to 'Hackable'.
+This is explained in more depth in the [Mission Objects](Mission Objects) page, but essentially in this example we just need to add the MissionObject component and set it to 'Hackable'.
 ## Setup a Lua Device Script
-Follow this guide to [Device Scripting](Device_Scripting.md) to create a device script and set up the devices buttons to call the functions you setup in the 'Hackable' component.
-Or even call anything else from the [Lua Apis](Category:LuaAPI.md) .
+Follow this guide to [Device Scripting](Device Scripting) to create a device script and set up the devices buttons to call the functions you setup in the 'Hackable' component.
+Or even call anything else from the [Lua Apis](Category:LuaAPI) .
 ## Add to your mission script and connect to networks
-* [Setup the device](Mission_Scripting.md) and point is to your Device Script as explained above
-* [Add the device](Mission_Scripting.md)
-* [Connect the device to a Network](Mission_Scripting.md)
+* [Setup the device](Mission Scripting) and point is to your Device Script as explained above
+* [Add the device](Mission Scripting)
+* [Connect the device to a Network](Mission Scripting)
 ## Add item prop
 When a NPC interacts with a hackable device sometimes that action needs some item to show on the NPC hand (for example: the soda machine makes a soda can appear on the NPC hand when the drinking animation is triggered). This item is set in the inspector, having a reference to the wanted object in the field 'Animation Item Prop', it's also possible to select the slot that the item will show (right hand is the default slot).
 ## Setup to affect a player and NPC on amok

@@ -28,7 +28,7 @@ Conversation.StartScript(path, onCompleteCallback)
 
 **Notes**: Must be in MissionFolder/Conversations/\$path
 
-Global Functions [global_functions]
+Global Functions [global functions]
 ----------------
 
 ### Send

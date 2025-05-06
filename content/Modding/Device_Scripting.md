@@ -7,7 +7,7 @@
 An example of a hackable device
 
 # Introduction
-Device scripting is core to creating an Off Grid [Mission](Mission_Scripting.md), they are incredibly extensible and are useful for a multitude of tasks including forwarding your missions plot and world building.
+Device scripting is core to creating an Off Grid [Mission](Mission Scripting), they are incredibly extensible and are useful for a multitude of tasks including forwarding your missions plot and world building.
 Each device that the player can hack into will have a device script, devices can share scripts if they're similar enough or have their own bespoke scripts.
 # Device Concepts
 Currently there are some boolean values that can be toggled on each Device.
@@ -174,7 +174,7 @@ device = {
 	...,
 }
 ```
-The OnReceiveData callback will be triggered when the device is the recipient of the[Mission.SendData](Mission_Lua_API.md)function.
+The OnReceiveData callback will be triggered when the device is the recipient of the[Mission.SendData](Mission_Lua API)function.
 # What do I do now?
 Now you've read through and got an idea of how to build up what your interface looks like you might be looking at ways to expand what your device does.
 What's important to remember is all Lua Apis are available in device scripts meaning they can:

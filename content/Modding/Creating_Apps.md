@@ -422,4 +422,4 @@ Use`SetState(app.state)`to set the App's state on the game side to match the sta
 ## Apps in your mission and other scripts
 Some of the app functionality can be triggered from your other Lua scripts. Most commonly, you'd want use this to make apps available to the player during your mission rather than from the start, but there are of course more creative ways to make use of the API. It's worth remembering, though, that in the end it's the App's Lua script that determines what the app does, anything else can only*request*it to do something.
 ### Apps API
-The full Apps Lua API is documented [here](Apps_Lua_API.md).
+The full Apps Lua API is documented [here](Apps_Lua API).

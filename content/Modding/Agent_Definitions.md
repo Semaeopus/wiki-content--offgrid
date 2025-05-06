@@ -25,7 +25,7 @@ or, for a state with a single item in, as
 ```
 ...which saves some slightly untidy extra braces. Note that in the former example, the items are just an anonymous list, the keys are implicit. GOAP State is a type that will appear throughout this guide and it is always parsed in the same way.
 ## Personality
-Each AI (TBC: Human AI?) should have a[personality profile](Character_Profiles.md). This describes the AI's likes, loves, family, dog... anything you like. This is one of the main mechanisms for differentiating behaviour between agents - thus allowing a player's actions to affect multiple agents in multiple ways, and allows for complex behaviour. The mechanism for doing this is the Personality Requirement.
+Each AI (TBC: Human AI?) should have a[personality profile](Character Profiles). This describes the AI's likes, loves, family, dog... anything you like. This is one of the main mechanisms for differentiating behaviour between agents - thus allowing a player's actions to affect multiple agents in multiple ways, and allows for complex behaviour. The mechanism for doing this is the Personality Requirement.
 | Personality Requirement | Name | Type | Description |
 | --- | --- | --- | --- |
 | subject | string | The primary tag that this requirement is seeking. |
@@ -40,7 +40,7 @@ Here's a snippet of a Personality Profile.
 { data = { "LiverpoolReds" }, tags = { "sport", "likes", "celebrates" } },
 ```
 So, this AI considers that HipHop & Pop are both music, and they like it. They consider Rock to be music, but they dislike it. They consider Classical and HipHop to be music that relaxes them. They consider LiverpoolReds to be related to sport, they like it, and they celebrate it.
-The only mandatory part of a requirement is the subject. The subject is merely a tag, but it's the tag we look for first, and it's the tag that can be specified by[API call ChangeSubject](AI_Lua_API.md). Let's write a requirement that will pass using only the subject.
+The only mandatory part of a requirement is the subject. The subject is merely a tag, but it's the tag we look for first, and it's the tag that can be specified by[API call ChangeSubject](AI_Lua API). Let's write a requirement that will pass using only the subject.
 ```
 personalityRequirement = { subject = "music" },
 ```
@@ -83,7 +83,7 @@ Thus, each time an Agent uses the Soda machine, their bladder-o-meter is increme
 # File Format
 The definition is a single table, named Agent, containing several tables that define different aspects of an Agent.
 ## Fails
-This table contains a string or strings that are turned into [AI_Gestures](AI_Gestures.md) and used when the Agent no longer has a valid goal. So if you add "Yawn", and see your agent yawning, constantly, they probably don't have anything better to do! Ensure you type the gesture precisely - it's case sensitive.
+This table contains a string or strings that are turned into [AI Gestures](AI Gestures) and used when the Agent no longer has a valid goal. So if you add "Yawn", and see your agent yawning, constantly, they probably don't have anything better to do! Ensure you type the gesture precisely - it's case sensitive.
 ## World State
 The World State is a description of everything an AI knows about, in the context of planning. It is simply a*GOAP State*.
 ## Goals
@@ -153,7 +153,7 @@ An Actions is something that the AI **does**. In order to **do** it, it must hav
 | personalityEffect | Optional. The effect on personality stats that performing this Action has. |
 | targetAgent | Default false. If true, the Agent requires that there be another agent nearby for this Action to be performed. |
 | targetPlayer | Default false. If true, the Agent requires that the player be nearby for this Action to be performed. |
-| targetRequirement | Optional. The required[personality profile](Character_Profiles.md)this AI needs for this Action to run. |
+| targetRequirement | Optional. The required[personality profile](Character Profiles)this AI needs for this Action to run. |
 | data | Optional. When this Action happens, the data will be sent. The recipient of the data is held in the sending agent's worldstate. A state named {this action's name} with "DataRecipient" appended will be used for this. See the further explanation below. |
 ### Sending Data as part of an Action
 This is where things become a little more complicated. Actions can result in an agent sending data. The data is fixed in the Agent profile, but the recipient is not - this is because this would mean this Action would require the presence of a particular device (which could be the mobile phone device of another agent). The solution to this issue is to store the name of this device in the world state (yes, states can hold data other than booleans!). The name of the state that this is stored in is derived from the name of the action itself.
@@ -203,7 +203,7 @@ A response is a method of adjusting an AI's personality stats when another AI pe
 | personalityEffect | The effect on personality stats that being the victim of this Action has. |
 So what's the point of this? Basically, its purpose is to create a mechanism of having one AI's behaviour directly affect another. Recall the "targetAgent" attribute of the*Action*table. When this is true, the Action is performed*on*another AI. If we are that AI, our Responses are looked at, and if there is a Response that matches the Action that has been performed on us, our*effect*is applied to our stats. This is a neat way of creating chains of sociable Actions among AI. A player could send an SMS to two agents, resulting in one becoming sad and the other happy. The happy agent could then tease the sad agent, angering them, causing an argument! All allowing the player to sneak by.
 ## Reactions
-A reaction is a method of adjusting an AI's personality stats when they do something, based on their[personality profile](Character_Profiles.md). These effects will be performed when[ReactTo](AI_Lua_API.md)is called, if the requirement is satisfied.
+A reaction is a method of adjusting an AI's personality stats when they do something, based on their[personality profile](Character Profiles). These effects will be performed when[ReactTo](AI_Lua API)is called, if the requirement is satisfied.
 | Reaction Table | Name | Description |
 | --- | --- | --- |
 | personalityRequirement | The*requirement*, which, when reacted to, will bring about the effect. |

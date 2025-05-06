@@ -24,26 +24,26 @@ There is a heck of a lot you can mod in*Off Grid*, we specifically have made the
 Check out the table below to see the main topics and guides, each of these categories lead on to more in depth and specific articles themselves too.
 | Manual |
 | --- |
-| [Asset Creation Pipeline](Asset_Creation_Pipeline.md) |
-| [Character Profiles](Character_Profiles.md) |
-| [Character Types and Prefabs](Character_Types_and_Prefabs.md) |
-| [Conversations](Conversations.md) |
-| [Creating Apps](Creating_Apps.md) |
-| [Data Scripting](Data_Scripting.md) |
-| [Debugging Your Mods](Debugging_Your_Mods.md) |
-| [Device Scripting](Device_Scripting.md) |
-| [Devices](Devices.md) |
-| [Game Progress](Game_Progress.md) |
-| [Getting Started with the LevelKit](Getting_Started_with_the_LevelKit.md) |
-| [How the SoundIDs are structured](How_the_SoundIDs_are_structured.md) |
-| [Message Templates](Message_Templates.md) |
-| [Mission Objects](Mission_Objects.md) |
-| [Mission Scripting](Mission_Scripting.md) |
-| [Pre-made Hackable Devices](Pre-made_Hackable_Devices.md) |
-| [Setting up Doors](Setting_up_Doors.md) |
-| [Triggering Sounds](Triggering_Sounds.md) |
-| [Audio Options](Audio_Options.md) |
-| [Triggers and Examples](Triggers_and_Examples.md) |
+| [Asset Creation Pipeline](Asset_Creation Pipeline) |
+| [Character Profiles](Character Profiles) |
+| [Character Types and Prefabs](Character_Types_and Prefabs) |
+| [Conversations](Conversations) |
+| [Creating Apps](Creating Apps) |
+| [Data Scripting](Data Scripting) |
+| [Debugging Your Mods](Debugging_Your Mods) |
+| [Device Scripting](Device Scripting) |
+| [Devices](Devices) |
+| [Game Progress](Game Progress) |
+| [Getting Started with the LevelKit](Getting_Started_with_the LevelKit) |
+| [How the SoundIDs are structured](How_the_SoundIDs_are structured) |
+| [Message Templates](Message Templates) |
+| [Mission Objects](Mission Objects) |
+| [Mission Scripting](Mission Scripting) |
+| [Pre-made Hackable Devices](Pre-made_Hackable_Devices) |
+| [Setting up Doors](Setting_up Doors) |
+| [Triggering Sounds](Triggering Sounds) |
+| [Audio Options](Audio Options) |
+| [Triggers and Examples](Triggers_and Examples) |
 ## Lua Apis
 Here you can find all of the Api documentation for the various calls you have access to for writing mods in*Off Grid*whether it be writing your own mission scripts, hackable devices, in game apps and tools or anything else for that matter!
 ## A brief overview of how users will make custom missions

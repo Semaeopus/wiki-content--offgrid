@@ -58,7 +58,7 @@ These are currently hard coded. This will be changing in time. The current optio
 | F_Med-WorkSuit-01 | An average sized woman. |
 These can be colourised using the attributes "colorTexture" & "metalSmoothTexture".
 ### agent
-There are currently two basic Agent definitions that can be used - "Guard.lua" & "OfficeWorker.lua". For information on writing custom Agent definitions, see[Agent Definitions](Agent_Definitions.md).
+There are currently two basic Agent definitions that can be used - "Guard.lua" & "OfficeWorker.lua". For information on writing custom Agent definitions, see[Agent Definitions](Agent Definitions).
 ### patrolroute
 Agents with a PatrolAction need a list of GameObjects within this table.
 ### sounds

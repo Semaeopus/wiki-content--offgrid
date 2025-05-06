@@ -12,13 +12,13 @@ All modding scripts for Off Grid are written in Lua, it's a lovely little langua
 Lua is quite easy to pick up, even people with no programming experience should be able to get hacking in next to no time!
 You'll need the following tools for editing and writing new mission scripts:
 ### IDE
-Firstly you'll need an[IDE](Integrated_development_environment.md), we recommend the [Atom](https://atom.io/) with the following extensions:
+Firstly you'll need an[IDE](Integrated_development environment), we recommend the [Atom](https://atom.io/) with the following extensions:
 | NAME | Description |
 |------|-------------|
 | [language-lua](https://web.archive.org/web/20200807124924/https://atom.io/packages/language-lua) | Syntax highlighting for Lua |
 | [autocomplete-lua](https://web.archive.org/web/20200807124924/https://atom.io/packages/autocomplete-lua) | Auto-complete support for Lua, we recommend enabling the "Override lower priority providers" in the plugin settings |
 
-You might also want to get our [Atom Snippets](Atom_Snippets.md)code and copy&paste it into Atom's Snippets file to add nice autocompletion for Off Grid API.
+You might also want to get our [Atom Snippets](Atom Snippets)code and copy&paste it into Atom's Snippets file to add nice autocompletion for Off Grid API.
 ### LevelKit & Game
 Both of these are needed in order to run and test and scripts you create
 **TO DO**
@@ -59,13 +59,13 @@ state = {
 		},
 	},
 ```
-This is the first example of us creating a sub table in the*mission*table, the*characters*table contains all the information about the characters in your mission! Different types of characters might need different values, and there are some optional settings as well for different purposes. Different character types and creating background profiles for the characters is explained in more detail in[Character Profiles](Character_Profiles.md).
+This is the first example of us creating a sub table in the*mission*table, the*characters*table contains all the information about the characters in your mission! Different types of characters might need different values, and there are some optional settings as well for different purposes. Different character types and creating background profiles for the characters is explained in more detail in[Character Profiles](Character Profiles).
 In this example we've added Joe, the protagonist of Off Grid. Here's a break down of what the value of Joe's table means:
 | Character Table | Name | Description |
 | --- | --- | --- |
 | displayName | The name that will be used any game UI referencing the character |
-| characterType | The 'type' of the character, see[Character Types and Prefabs](Character_Types_and_Prefabs.md)for more information on possible values |
-| 'prefab' | The prefab for the character, see[Character Types and Prefabs](Character_Types_and_Prefabs.md)for more information on possible values |
+| characterType | The 'type' of the character, see[Character Types and Prefabs](Character_Types_and Prefabs)for more information on possible values |
+| 'prefab' | The prefab for the character, see[Character Types and Prefabs](Character_Types_and Prefabs)for more information on possible values |
 | spawnpoint | The name of the spawn mission object, the position of this object will be where the character is spawned |
 
 The *characters* table can hold information on as many characters as you'd like to fill the mission with, they won't be spawned into the mission until you decide (more on that later)
@@ -108,17 +108,17 @@ Available data types: generic, text, SMS, encrypted, audio, video, location, key
 		
 	},
 ```
-The data table contains data that's specific to your mission, in this example we're defining the players[PGP](Pretty_Good_Privacy.md)encryption key
+The data table contains data that's specific to your mission, in this example we're defining the players[PGP](Pretty_Good Privacy)encryption key
 | Data Table |Description |
 | --- | --- |
 | name | The display name of the data, this is what will be displayed in the games UI |
 | immutable | Optional. Is the data immutable? If true the player won't be able to delete it, this is useful for data items that are part of mission objectives |
-| dataType | The type of the data, this is used for displaying the data correctly. Available DataTypes are listed in[Constants page](Constants_Lua_API.md). |
+| dataType | The type of the data, this is used for displaying the data correctly. Available DataTypes are listed in[Constants page](Constants_Lua API). |
 | creatorName | The name of the data's creator (displayed in the UI) |
 | dataString | The contents of the data file |
 | description | A description of the data file |
 | dataColor | RGBA value that's used as the colour of the data point when visible in the players data view |
-| script | The path (relative to the mission folder) to the optional Lua script for this data. See[Data Scripting](Data_Scripting.md)for more information. |
+| script | The path (relative to the mission folder) to the optional Lua script for this data. See[Data Scripting](Data Scripting)for more information. |
 #### Networks
 ```
 -- Networks:
@@ -152,7 +152,7 @@ devices = {
 | --- | --- | --- |
 | dataColor | The color used when displaying data from this device. |
 | owner | Optional. The internalName of the device's owner. Use this if you want too restrict device's access based on owner's metadata or something. |
-| script | The script that defines the GUI and the behaviour of the device ( See [device scripts](Device_Scripting.md) for more information ) |
+| script | The script that defines the GUI and the behaviour of the device ( See [device scripts](Device Scripting) for more information ) |
 #### Objectives
 ```
 -- Mission objectives:
@@ -218,7 +218,7 @@ This will add in all of your created elements into your level, below you will se
 ```
 This part of the code shows the format of spawning in characters - this includes the player and any NPCs like the guards, which you will have created further up in your Mission Script. If the title of your character table for your player was called`jenson`, you would simply change`Mission.SpawnCharacter("player")`to`Mission.SpawnCharacter("jenson")`, this would now let your new character spawn in.
 ##### Connect Doors to the Network and set Zones
-Once you have [created doors](Setting_up_Doors.md) you can then also add them to a network. Network-connected doors arre controlled by the electronic lock systems in the buildings and opened by specific access keys. Firstly you add the door to a network, then you can set the door's zone to require a specific key to open it. For example where if you consider the following command to set keys:`Doors.SetZoneKeys("Offices", {"admins", "janitors"})`,`"Offices"`is the name of the zone the door is assigned to, and`{"admins", "janitors"}`telsl that all doors belonging to this zone should be possible to open using either "admin" or "janitors" keys.
+Once you have [created doors](Setting_up Doors) you can then also add them to a network. Network-connected doors arre controlled by the electronic lock systems in the buildings and opened by specific access keys. Firstly you add the door to a network, then you can set the door's zone to require a specific key to open it. For example where if you consider the following command to set keys:`Doors.SetZoneKeys("Offices", {"admins", "janitors"})`,`"Offices"`is the name of the zone the door is assigned to, and`{"admins", "janitors"}`telsl that all doors belonging to this zone should be possible to open using either "admin" or "janitors" keys.
 #### Mission Start
 StartMission() is ran when the mission is started form the beginning. When loading a save or checkpoint, the same things would be covered by data loaded from the save instead. Use this to set initial state of things in your level.
 ```

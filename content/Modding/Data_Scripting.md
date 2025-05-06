@@ -5,11 +5,11 @@
 *Scraped on: 2025-05-02 18:39:23*
 
 ## Data Scripting
-We saw in [Mission Scripting](Mission_Scripting.md) that Data can have a script attached. Let's have a brief look at what can be done with this.
+We saw in [Mission Scripting](Mission Scripting) that Data can have a script attached. Let's have a brief look at what can be done with this.
 We have the following globals available:
 | Globals | Name | Description |
 | --- | --- | --- |
-| DeviceName | The name of the device, to be used with [Devices Lua API](Devices_Lua_API.md) |
+| DeviceName | The name of the device, to be used with [Devices Lua API](Devices_Lua API) |
 | macAddress | The MAC address of the device |
 | RunMissionCommand | The function enabling access to mission script functionality |
 

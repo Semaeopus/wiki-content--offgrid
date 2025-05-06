@@ -44,5 +44,5 @@ This fires whenever RunOnce is called. This could be reasonably frequently. RunO
 ### NPC Use
 This fires whenever an NPC uses an InterestPoint, if that InterestPoint has a Device.
 # Further Resources
-This is all done in the [Device Scripting](Device_Scripting.md) page.
-To know what things devices can do you can reference the [Devices Lua API](Devices_Lua_API.md).
+This is all done in the [Device Scripting](Device Scripting) page.
+To know what things devices can do you can reference the [Devices Lua API](Devices_Lua API).

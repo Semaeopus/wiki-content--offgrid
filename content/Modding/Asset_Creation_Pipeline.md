@@ -67,23 +67,23 @@ In Fig 0.8 you can see the selection types highlighted, The square icon represen
 `TO BE INSERTED fig 0.9`
 Here you can select any colour you wish using the colour wheel or you can select the Hex button to use hex codes to find a specific colour. Using the hex codes in the table below will allow you to match colours used within Off Grid.
 ### Vertex Colours(base)
-| Hex code | Preview 
-| --- | --- |
-| #FFFBF0 | white​ ​walls​ ​etc. |
-| #CCCCCC | Concrete,​ ​grey​ ​floors |
-| #F0FAFF | window​ ​glass |
-| #FFF7E8 | incandescent​ ​lights |
-| #BD9364 | Cardboard |
-| #4E4B4B | Tarmac |
-| #82817E | Paving |
-| #ADB2BD | Aluminium |
-| #A97537 | Brass​ |
-| #423D3D | Rubber​ |
-| #D6B08D | Light ​wood |
-| #8B4627 | Medium Wood |
-| #753A1A | Dark Wood |
+| Preview | Hex code | Information |
+| --- | --- | --- |
+|  | #FFFBF0 | white walls​ ​etc. |
+|  | #CCCCCC | Concrete,​ ​grey​ ​floors |
+|  | #F0FAFF | window​ ​glass |
+|  | #FFF7E8 | incandescent​ ​lights |
+|  | #BD9364 | Cardboard |
+|  | #4E4B4B | Tarmac |
+|  | #82817E | Paving |
+|  | #ADB2BD | Aluminium |
+|  | #A97537 | Brass​ |
+|  | #423D3D | Rubber​ |
+|  | #D6B08D | Light ​wood |
+|  | #8B4627 | Medium Wood |
+|  | #753A1A | Dark Wood |
 ### Vertex Colours(Other)
-For extended table of colors used in various models throughout the game, take a look at the [Extra_Colors](Extra_Colors.md) page.
+For extended table of colors used in various models throughout the game, take a look at the [Extra Colors](Extra Colors) page.
 ### Off Grid Materials
 **Names of possible materials in engine**
 | Material name | Description | Has 2 sided |

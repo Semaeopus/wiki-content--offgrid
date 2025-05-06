@@ -5,7 +5,7 @@
 *Scraped on: 2025-05-02 18:43:44*
 
 Characters in Off Grid are defined in two places. First, the character's name, type, and few other details are set in your level's mission Lua script, in the*characters*-table. Then, for certain character types, you'll also need another Lua script that describes their personality and contains a profile to describe the character's background.
-There are some pre-made personality scripts available in the [Common folder](Common_folder.md), but be aware that a background profile should be used for one character only, so if you grab a certain guard's personality script and use it in your level, that will be*the same guard that was walking around some other level*. If you want a new character, it's usually the best to just create a duplicate of one of the existing files inside your mission's folders, and edit the values to fill in some background info about your new character.
+There are some pre-made personality scripts available in the [Common folder](Common folder), but be aware that a background profile should be used for one character only, so if you grab a certain guard's personality script and use it in your level, that will be*the same guard that was walking around some other level*. If you want a new character, it's usually the best to just create a duplicate of one of the existing files inside your mission's folders, and edit the values to fill in some background info about your new character.
 Another thing worth keeping in mind is that if you have same character in multiple levels, you should always use the same name for the character, both in your mission scripts and in the personality script. This makes sure the social engineering mechanics recognize that character correctly and any new information the player learns is matched with the correct profile.
 You*can*, however, use a different personality file for the same character in different missions. One reason to do so would be to have some background information about your character that the player only learns about later on in your multi-level story line.
 
@@ -28,8 +28,8 @@ For the player character you only need few pieces of information in the mission 
 | --- | --- | --- |
 | displayName | The name that will be used any game UI referencing the character |
 | internalName | The internalName can be thought of as the id for the character, you'll reference the character by this value in a few places including conversations (Must be unique!) |
-| characterType | The 'type' of the character, see[Character Types and Prefabs](Character_Types_and_Prefabs.md)for more information on possible values |
-| 'prefab' | The prefab for the character, see[Character Types and Prefabs](Character_Types_and_Prefabs.md)for more information on possible values |
+| characterType | The 'type' of the character, see[Character Types and Prefabs](Character_Types_and Prefabs)for more information on possible values |
+| 'prefab' | The prefab for the character, see[Character Types and Prefabs](Character_Types_and Prefabs)for more information on possible values |
 | spawnpoint | The name of the spawn mission object, the position of this object will be where the character is spawned |
 ### Enemies
 ```
@@ -62,8 +62,8 @@ For the player character you only need few pieces of information in the mission 
 | --- | --- | --- |
 | displayName | The name that will be used any game UI referencing the character |
 | internalName | The internalName can be thought of as the id for the character, you'll reference the character by this value in a few places including conversations (Must be unique!) |
-| characterType | The 'type' of the character, see[Character Types and Prefabs](Character_Types_and_Prefabs.md)for more information on possible values |
-| 'prefab' | The prefab for the character, see[Character Types and Prefabs](Character_Types_and_Prefabs.md)for more information on possible values |
+| characterType | The 'type' of the character, see[Character Types and Prefabs](Character_Types_and Prefabs)for more information on possible values |
+| 'prefab' | The prefab for the character, see[Character Types and Prefabs](Character_Types_and Prefabs)for more information on possible values |
 | spawnpoint | The name of the spawn mission object, the position of this object will be where the character is spawned |
 | colorTexture | Name of the color look-up texture used to customize the character model |
 | metalSmoothTexture | Name of the metallic/smoothness look-up texture used to customize the character model |
@@ -95,7 +95,7 @@ At the moment, the required information every character must have includes:
 In addition, having a value for "Gluttony" in Stats section will change the character model between thin and fat one based on the value.
 Due to how our social engineering mechanics work, the more information there is defined about a character, the easier it is for the player to collect enough unique pieces of knowledge to gain access to that character's devices etc. If there's only few pieces of information, the player is more likely to just find character metadata he already knows about, which won't then contribute to the total gained knowledge. Since the data player can find about characters is procedural, and randomized, it's best to make sure there's decent amount of information about every character you create, as searching through duplicate data to collect large enough profile about a character would be more tedious than enjoyable for the player. If the goal is to make certain character's devices more difficult to access, it's recommended to increase the difficulty on the device script rather than by limiting the character's profile size.
 ...and, of course, the tags we have used in our existing profiles are not a limitation, feel free to add any new ones as you go, there is no limitation to what you can add!
-(If you end adding lots of new interesting tags, it might be worth checking out the Lua scripting for[Message Templates](Message_Templates.md)as well, so you can put those tags into good use)
+(If you end adding lots of new interesting tags, it might be worth checking out the Lua scripting for[Message Templates](Message Templates)as well, so you can put those tags into good use)
 ```
 Character = {
 	Stats = {

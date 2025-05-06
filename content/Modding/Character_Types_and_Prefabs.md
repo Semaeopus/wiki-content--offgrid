@@ -58,7 +58,7 @@ This would look like the following in code:
 ### Voice
 There are currently two voices, "Big_Guard" or "Huge_Guard". A table giving more information should go here when more voices are added.
 ### Custom LUTs and head props
-This is a subject of it's own, to customise the look of your characters further you will want to read up on[Head props](Head_props.md)and[Character Colours](Character_Colours.md).
+This is a subject of it's own, to customise the look of your characters further you will want to read up on[Head props](Head props)and[Character Colours](Character Colours).
 ### Virtual characters
 Once you have created your virtual characters in order to use them within conversations you will have to add them to a network that is shared with the player. By default the mission script includes a mobile network called "Semaeopus4G" to connect other characters to this network you must use the ConnectToNetwork function. For example:`Mission.ConnectToNetwork(mission.characters.terrance,mission.networks.Semaeopus4G.name,mission.networks.Semaeopus4G.userAccessKey)`
 ### Adding Guards

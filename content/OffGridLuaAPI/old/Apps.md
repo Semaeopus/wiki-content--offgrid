@@ -60,7 +60,7 @@ Apps.Console_OutputLine(appName, outputString)
 
 **Returns**: Nothing
 
-Global Functions [global_functions]
+Global Functions [global functions]
 ----------------
 
 ### SetState
