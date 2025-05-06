@@ -10,7 +10,7 @@ be aware of and respond to.
 Tables
 ------
 
-### Noise [noise_1]
+### Noise [noise 1]
 
 Table representing a noise
 

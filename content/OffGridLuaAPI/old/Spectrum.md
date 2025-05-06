@@ -53,7 +53,7 @@ Spectrum.FilterClear()
 
 **Returns**: Nothing
 
-### FilterType (int, bool) [filtertype_int_bool]
+### FilterType (int, bool) [filtertype_int bool]
 
 ``` lua
 Spectrum.FilterType (int, bool)(t, on)
