@@ -1,9 +1,3 @@
-# Mission_Objects
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Mission_Objects*
-
-*Scraped on: 2025-05-02 18:37:39*
-
 ## Mission Objects
 Mission Objects, as the name suggests, are objects that are found within a level, with their purpose being to help the player complete the mission. Mission Objects can include many things like player spawns, interactable items, hackable devices, and triggers - all vital features that most levels will need.
 Examples of what some Mission Objects look like in Unity

@@ -1,9 +1,3 @@
-# Modding
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Modding*
-
-*Scraped on: 2025-05-02 18:39:30*
-
 Players, modders, and hackers are able to use the game to create new and interesting levels with stories about surveillance, hacking and the Internet of Things or whatever else you are inspired to!  Off Grid is heavily moddable, with an exposed Lua API allowing anyone to edit the game.  Level editing tools enable anyone with the  Unity engine free personal edition and build mods with the same tools the development team use.  With this level of control, players can build their own content:  levels, hackable devices, apps, hacking tools, and stories - and share them with other players - a huge opportunity for players to make and experience topical and contemporary stories as they emerge in the IRL world of hacking and surveillance.
 
 
@@ -32,7 +26,7 @@ Check out the table below to see the main topics and guides, each of these categ
 | [Data Scripting](Data Scripting) |
 | [Debugging Your Mods](Debugging_Your Mods) |
 | [Device Scripting](Device Scripting) |
-| [Devices](Devices) |
+| [Devices](content/Modding/Devices.md) |
 | [Game Progress](Game Progress) |
 | [Getting Started with the LevelKit](Getting_Started_with_the LevelKit) |
 | [How the SoundIDs are structured](How_the_SoundIDs_are structured) |

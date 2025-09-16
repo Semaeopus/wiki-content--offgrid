@@ -1,9 +1,3 @@
-# Material_and_light_colors
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Material_and_light_colors*
-
-*Scraped on: 2025-05-02 18:42:13*
-
 ## Material colors
 | Hex code | Preview | Description |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

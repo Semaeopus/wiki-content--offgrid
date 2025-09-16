@@ -1,9 +1,3 @@
-# Character_Types_and_Prefabs
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Character_Types_and_Prefabs*
-
-*Scraped on: 2025-05-02 18:39:20*
-
 ## Characters
 Adding characters to your level is important as this will allow you to add other important systems such as conversations which is one way to introduce story elements to your level.
 To add characters to your level you must open up the mission script and locate the character table. It should look something like this:

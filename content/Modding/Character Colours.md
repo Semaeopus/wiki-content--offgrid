@@ -1,9 +1,3 @@
-# Character_Colours
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Character_Colours*
-
-*Scraped on: 2025-05-02 18:38:15*
-
 ## Colour lookup tables with UVs
 The characters in Off Grid use a common material which switches out Colour Lookup Tables (LUTs) to change the colour of the Character's UVs. A LUT is a colour grid, each tile in the grid corresponds to a part of the Character's body.
 Each LUT is a 64x64 pixel .png texture. Each tile in that texture is 8x8 pixels.

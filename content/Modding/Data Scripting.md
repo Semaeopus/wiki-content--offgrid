@@ -1,9 +1,3 @@
-# Data_Scripting
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Data_Scripting*
-
-*Scraped on: 2025-05-02 18:39:23*
-
 ## Data Scripting
 We saw in [Mission Scripting](Mission Scripting) that Data can have a script attached. Let's have a brief look at what can be done with this.
 We have the following globals available:

@@ -1,9 +1,3 @@
-# Hackable_Object_Creation
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Hackable_Object_Creation*
-
-*Scraped on: 2025-05-02 18:41:14*
-
 ## Choose a Mesh
 Take a prop that is going to represent your hack-able object and place it in your scene.
 It can be anything really, but to to make full use of the options available either:
@@ -12,7 +6,7 @@ The scene to pick hackable objects from
 * Piece your own together from pre-made models and parts of models in the LevelKit>Models>Props>Devices and it's sub-folder 'ModularTechParts'
 * or follow this guide to [Modeling your own Hackable Devices](Modeling_your_own_Hackable Devices)
 ## Add the Hackable component
-Decide how you want it too behave in it's different states, as explained on the[Devices](Devices)page.
+Decide how you want it too behave in it's different states, as explained on the[Devices](content/Modding/Devices.md)page.
 Eg. 
 Amok() sets of a sparks particle effect 
 RunOnce() spits out a sheet of paper

@@ -1,8 +1,3 @@
-# Game_Progress
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Game_Progress*
-
-*Scraped on: 2025-05-02 18:38:08*
 
 Off Grid is built to support much more complicated stories than the linear main story is. And it's also built to allow modders to hook their own new missions or stories in middle of the original story and it's missions. This means that there is no existing script that tells"when you've completed this level, load this other level next" and so on until you've completed the game. Instead, we've set up a system based on simple preconditions and effects that tell what's needed for a mission to "unlock" in game so it can be played, and how completing that mission changes the game world (or story, or characters, or whatever you might want).
 

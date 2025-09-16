@@ -1,9 +1,3 @@
-# AI_Gestures
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=AI_Gestures*
-
-*Scraped on: 2025-05-02 18:41:39*
-
 # AI Gestures
 
 ## Description

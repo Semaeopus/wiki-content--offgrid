@@ -1,9 +1,3 @@
-# Asset_Creation_Pipeline
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Asset_Creation_Pipeline*
-
-*Scraped on: 2025-05-02 18:43:48*
-
 ## Creating Your First 3D Model
 Using Unity as a mod editor means that you don't have to stick with just our models to build your levels, you can make your own, or edit ours to make the props and architecture that will fit your level.
 Here is a quick guide with some conventions to follow so that your models will conform to our pipeline and *hopefully import easily.

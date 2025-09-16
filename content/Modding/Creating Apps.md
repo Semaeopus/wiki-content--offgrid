@@ -1,9 +1,3 @@
-# Creating_Apps
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Creating_Apps*
-
-*Scraped on: 2025-05-02 18:39:27*
-
 ## Introduction
 The main tool the player has in Off Grid (apart from clever mind and smooth stealth skills, of course) is the apps running on the player's phone, allowing both viewing and interacting with all the devices and data in the levels.
 The app system is built to allow creating all kinds of new tools, both very generic and powerful ones, but also small quality-of-life tools that just do some small very specific task, but make it more convenient for the player.

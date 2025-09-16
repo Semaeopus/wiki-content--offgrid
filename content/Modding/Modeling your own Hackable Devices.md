@@ -1,9 +1,3 @@
-# Modeling_your_own_Hackable_Devices
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Modeling_your_own_Hackable_Devices*
-
-*Scraped on: 2025-05-02 18:41:22*
-
 ## How to create a Screen for a Hackable Object
 Blender is used for this tutorial. The Model for this Fuse Box is already finished, it requires a screen.
 Step 1

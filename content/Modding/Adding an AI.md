@@ -1,8 +1,3 @@
-# Adding_an_AI
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Adding_an_AI*
-*Scraped on: 2025-05-02 18:40:54*
-
 # Adding AI to your level
 This page will guide you through the process of getting an AI Agent into your level. You should already have created your level, and have the mission script for it open before you start!
 ## The Characters Table

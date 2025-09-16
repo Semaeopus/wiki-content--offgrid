@@ -1,9 +1,3 @@
-# Conversations
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Conversations*
-
-*Scraped on: 2025-05-02 18:39:07*
-
 ## How to write up a crypto chat conversation
 The in game conversations through cryptochat are an important way to deliver narrative context, tutorialisation of tools and mechanics, or telegraphing the goals and objectives you might need to, to a player playing your level.
 To start building your own conversations you only need to know the locations of two lua scripts,

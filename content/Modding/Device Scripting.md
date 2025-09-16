@@ -1,11 +1,3 @@
-# Device_Scripting
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Device_Scripting*
-
-*Scraped on: 2025-05-02 18:38:21*
-
-An example of a hackable device
-
 # Introduction
 Device scripting is core to creating an Off Grid [Mission](Mission Scripting), they are incredibly extensible and are useful for a multitude of tasks including forwarding your missions plot and world building.
 Each device that the player can hack into will have a device script, devices can share scripts if they're similar enough or have their own bespoke scripts.

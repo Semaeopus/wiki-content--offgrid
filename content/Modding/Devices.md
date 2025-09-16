@@ -1,9 +1,3 @@
-# Devices
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Devices*
-
-*Scraped on: 2025-05-02 18:43:18*
-
 # A Device GameObject
 First of all, make sure the*Tag*of the GameObject is HackableDevice, and that it's on layer*MissionObjects*.
 There are a few prerequisite components needed to set up your Device for hacking.

@@ -1,9 +1,3 @@
-# Building_your_First_Level
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Building_your_First_Level*
-
-*Scraped on: 2025-05-02 18:41:45*
-
 ###### note: This is just a general overview of the process.The hyperlinks throughout this document will explain in detail each section so be sure to click them if you are unsure about anything.
 ## Setup
 To Start Building your level you will need to download Unity and the support packages for Linux, pc and mac not doing this can cause errors when attempting to build your level. For an overview on setting up unity click here:[Getting Started with the LevelKit](Getting_Started_with_the LevelKit)

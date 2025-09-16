@@ -1,8 +1,3 @@
-# Message_Templates
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Message_Templates*
-
-*Scraped on: 2025-05-02 18:38:12*
 
 The messages that NPCs receive are generated from data in their [Character Profiles](Character Profiles) that is then fed into message templates in DefaultSMSCollection.lua.
 ```

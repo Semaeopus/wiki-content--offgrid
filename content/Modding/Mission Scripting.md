@@ -1,9 +1,3 @@
-# Mission_Scripting
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Mission_Scripting*
-
-*Scraped on: 2025-05-02 18:38:54*
-
 ## Intro
 This article will describe everything you need to know in order to understand how to write and modify missions scripts in Off Grid!
 Mission scripts can get a little bit large but don't let that overwhelm you, they're deceptively simple, we promise!

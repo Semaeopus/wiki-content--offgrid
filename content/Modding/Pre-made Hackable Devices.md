@@ -1,9 +1,3 @@
-# Pre-made_Hackable_Devices
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Pre-made_Hackable_Devices*
-
-*Scraped on: 2025-05-02 18:43:32*
-
 # Introduction
 We have a slew of ready-to-use hackable devices that can be dropped into your level straight away.
 These are located in: ...Folder in the Project....

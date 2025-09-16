@@ -1,9 +1,3 @@
-# Agent_Definitions
-
-*Source: https://web.archive.org/web/20200808012308/https://wiki.offgridthegame.com/index.php?title=Agent_Definitions*
-
-*Scraped on: 2025-05-02 18:43:25*
-
 Each AI's behaviour is defined by its Agent definition.
 # Concepts
 ## GOAP State
