@@ -1,27 +1,17 @@
-Creating Device UIs
-===================
+# Creating Device UIs
 
-Before you start with the device UIs, yo should be familiar with the [device scripting](OffGrid:Device_Scripting "wikilink") in general.
+Before you start with the device UIs, you should be familiar with the [[Device Scripting|device scripting]] in general.
 
-While device Lua script as a whole describes how the device behaves and reacts to certain things, this document focuses on the part about
-creating UI, either for when the player physically interacts with the device, or connects to it remotely using Apps.
+While device Lua script as a whole describes how the device behaves and reacts to certain things, this document focuses on the part about creating UI, either for when the player physically interacts with the device, or connects to it remotely using Apps.
 
 Also make sure to check out *StreamingAssets/Common/Devices/* and *StreamingAssets/Common/DeviceThemes/* for some examples and ideas. The
-*StreamingAssets/Common/Devices/Templates/* folder also contains some scripts intended for you to copy into your missions and use as starting
-points for your own devices.
+*StreamingAssets/Common/Devices/Templates/* folder also contains some scripts intended for you to copy into your missions and use as starting points for your own devices.
 
-Basics
-------
+## Basics
 
-Devices can have two separate UIs at the same time, *localUI* used for physical interaction with the device, and *remoteUI* used when player
-uses apps to access the device remotely. The usual [canAccess()](OffGrid:Device_Scripting#Device_Access "wikilink") and
-requirement for player and the device to be connected in same network will only apply to remote access, while we'll by default assume local
-access is always possible. (you can, of course, limit the local access by adding some kind of check in your UI itself, or limit it through
-other means in your mission script for example).
+Devices can have two separate UIs at the same time, *localUI* used for physical interaction with the device, and *remoteUI* used when player uses apps to access the device remotely. The usual [[(Device Scripting#Device_Access|canAccess()]] and requirement for player and the device to be connected in same network will only apply to remote access, while we'll by default assume local access is always possible. (you can, of course, limit the local access by adding some kind of check in your UI itself, or limit it through other means in your mission script for example).
 
-Apart from the way how the player accesses these UIs, they are just the same, with same supported features (depending on which UI Type you go
-for of course) and both running as part of the same device Lua VM so they can both access any data on the device and any global variables in
-the device's Lua script.
+Apart from the way how the player accesses these UIs, they are just the same, with same supported features (depending on which UI Type you go for of course) and both running as part of the same device Lua VM so they can both access any data on the device and any global variables in the device's Lua script.
 
 You can of course choose if you want to add one or the other only, both, or no UI at all for your device.
 
@@ -49,38 +39,27 @@ device = {
 
 Note that the definitions are slightly different based on which UI type you are using. the details for different types will be explained below.
 
-There's also more than one way to add the contents to the pages/buttons tables. As long as a valid UI table exists in the end, it's up to you
-you want to do it. For a simple UI it might be easiest to just define the contents directly in the pages/buttons table. For a more complex UI
-it can be easier to just define an empty table first, and then define and add each page/button to it one by one in your script. For more
-complex device behaviours and UIs you might even want to create some function that generate the contents and populate the pages for you...
+There's also more than one way to add the contents to the pages/buttons tables. As long as a valid UI table exists in the end, it's up to you how you want to do it. For a simple UI it might be easiest to just define the contents directly in the pages/buttons table. For a more complex UI it can be easier to just define an empty table first, and then define and add each page/button to it one by one in your script. For more complex device behaviours and UIs you might even want to create some function that generate the contents and populate the pages for you...
 
-UI Types
---------
+## UI Types
 
-When creating your UI, you get to choose between different UI styles, each with a different styling and supported features. The two currently
-implemented styles are Ncurses and Modern.
+When creating your UI, you get to choose between different UI styles, each with a different styling and supported features. The two currently implemented styles are Ncurses and Modern.
 
-[Ncurses](OffGrid:Device_UIs#Ncurses "wikilink") is a two-panel layout visually resembling a TUI ( a Text-based use interface), not unlike what you'd see done with the popular ncurses library in real life. This might be a good for for a backend UI on a device, something intended for technical people, administrators etc, rather than as the primary user interface for the end users. The layout is fixed, but the colors can be changed for a bit of customization.
+[[Device UIs#Ncurses|Ncurses]] is a two-panel layout visually resembling a TUI ( a Text-based user interface), not unlike what you'd see done with the popular ncurses library in real life. This might be a good for for a backend UI on a device, something intended for technical people, administrators etc, rather than as the primary user interface for the end users. The layout is fixed, but the colors can be changed for a bit of customization.
 
-[Modern](OffGrid:Device_UIs#Modern "wikilink"), on the other hand, is a more full-featured, intended for creating all kinds of simple front-end UIs intended for the end user. Be it a smart fridge, a combination lock, a vending machine, or printer. It supports graphics assets (both for the UI styling itself, and as content) and separate re-usable theme files.
+[[Device_UIs#Modern|Modern]], on the other hand, is a more full-featured, intended for creating all kinds of simple front-end UIs intended for the end user. Be it a smart fridge, a combination lock, a vending machine, or printer. It supports graphics assets (both for the UI styling itself, and as content) and separate re-usable theme files.
 
-Ncurses
--------
+## Ncurses
 
-For the simpler Ncurses UI, the header is always the same and is defined directly in the UI table. Same goes for the background & foreground
-colors, which are set as table of red, green & blue values (in 0-1 range).
+For the simpler Ncurses UI, the header is always the same and is defined directly in the UI table. Same goes for the background & foreground colors, which are set as table of red, green & blue values (in 0-1 range).
 
-The UI contents consists of the *buttons*-table, each item inside it being a button on the left side panel of the device UI. Each button can
-then have a sub-buttons table to describe what is displayed on the right-side panel after clicking that button.
+The UI contents consists of the *buttons*-table, each item inside it being a button on the left side panel of the device UI. Each button can then have a sub-buttons table to describe what is displayed on the right-side panel after clicking that button.
 
-For example,. the UI below has two items on left panel, *system* and *log*. Clicking on the system-button will set the right-side panel to
-show *powerswitch*, *social*, *test* and *morespeed.*
+For example,. the UI below has two items on left panel, *system* and *log*. Clicking on the system-button will set the right-side panel to show *powerswitch*, *social*, *test* and *morespeed.*
 
-The items will display their name & description in the UI. Any item with no *onClick* function defined will be displayed as a simple text item
-rather than a clickable button.
+The items will display their name & description in the UI. Any item with no *onClick* function defined will be displayed as a simple text item rather than a clickable button.
 
-Note that you can change the contents of the buttons-table (or sub-buttons of any button) at runtime or when some other button is
-clicked. Just call the global to refresh the UI afterwards (either *RefreshLocalUI()* or *RefreshRemoteUI()* ) to get the game to read and display the new contents..
+Note that you can change the contents of the buttons-table (or sub-buttons of any button) at runtime or when some other button is clicked. Just call the global to refresh the UI afterwards (either *RefreshLocalUI()* or *RefreshRemoteUI()* ) to get the game to read and display the new contents..
 
 ``` lua
 remoteUI = {
@@ -143,13 +122,9 @@ remoteUI = {
 }
 ```
 
-Modern
-------
+## Modern
 
-Modern UI type is designed to support as wide as possible set of graphical UIs while still keeping things as simple as possible. Instead
-of the two-panel layout and fixed setup about buttons on left panel and sub-button on right, the Modern UI works by crating separate UI pages,
-and navigating between them. Because of more flexible graphics support, the UI look is mostly defined in separate
-[deviceTheme](OffGrid:Device_UIs#Modern_UI_Themes "wikilink") files (but can be [overridden](OffGrid:Device_UIs#Overrides "wikilink") per item as well). Layout, title etc are set per each page rather than for the whole UI.
+Modern UI type is designed to support as wide as possible set of graphical UIs while still keeping things as simple as possible. Instead of the two-panel layout and fixed setup about buttons on left panel and sub-button on right, the Modern UI works by crating  separate UI pages, and navigating between them. Because of more flexible graphics support, the UI look is mostly defined in separate [[Device UIs#Modern UI Themes|deviceTheme]] files (but can be [[Device UIs#Overrides|overridden]] per item as well). Layout, title etc are set per each page rather than for the whole UI.
 
 At the simplest, a modern UI can be defined like this:
 
@@ -162,10 +137,10 @@ At the simplest, a modern UI can be defined like this:
 ```
 
 ### UI Pages
-Pages are where all the actual content of Modern UI happens. Each page you create can set it's own
-[layout](OffGrid:Device_UIs#UI_Layouts "wikilink") and [title](OffGrid:Device_UIs#Title_area "wikilink"), and of course it's own contents as well. One of the pages should set *homePage = true* to set it as the default page that'll show when the player first opens the UI. Beyond that, you can use the [SwitchPage()](OffGrid:Device_UIs#SwitchPage() "wikilink") call to navigate between different pages.
 
-The following example code creates a page called "home" in the device's *remoteUI*, sets it as the home page for the UI, override's the [theme's](OffGrid:Device_UIs#Modern_UI_Themes "wikilink") background picture and color, and then adds two buttons for navigating to other pages:
+Pages are where all the actual content of Modern UI happens. Each page you create can set it's own [[Device UIs#UI Layouts|layout]] and [[Device UIs#Title area|title]], and of course it's own contents as well. One of the pages should set *homePage = true* to set it as the default page that'll show when the player first opens the UI. Beyond that, you can use the [[Device UIs#SwitchPage()|SwitchPage()]] call to navigate between different pages.
+
+The following example code creates a page called "home" in the device's *remoteUI*, sets it as the home page for the UI, override's the [[Device UIs#Modern UI Themes|theme's]] background picture and color, and then adds two buttons for navigating to other pages:
 
 ``` lua
 device.remoteUI.pages.home = {
@@ -208,15 +183,15 @@ The size is defined in the UI theme, and can't be changed between individual pag
 
 ### Title area
 
-The top part of the Modern UI pages is used for a title area, which can have it's own background image, and can be sued to display some text content outside of the main content area.
+The top part of the Modern UI pages is used for a title area, which can have it's own background image, and can be used to display some text content outside of the main content area.
 
-Title area is by default 100 pixels tall, but the height can be set in the UI theme (or overridden in the device script for each page).
+Title area is by default 100 pixels tall, but the height can be set in the UI theme (or overridden in the device script for each page). Width is always the full width of the UI. 
 
-If you don't want a title area, you can either set the height to 0, or set it to sue a transparent background and just not set any title text.
+If you don't want a title area, you can either set the height to 0, or set it to use a transparent background and just not set any title text.
 
 ### Content Area
 
-The content area is where all the actual page contents go. It's by default the whole UI page (minus the title area), but you can set margins as needed to limit it to smaller part of the page. If the contents exceed the content area, a 10px wide scrollbar will automatically be shown on right side. HOw the contents are displayed on the area depends on which UI Layout the page was set to use.
+The content area is where all the actual page contents go. It's by default the whole UI page (minus the title area), but you can set margins as needed to limit it to smaller part of the page. If the contents exceed the content area, a 10px wide scrollbar will automatically be shown on right side. How the contents are displayed on the area depends on which UI Layout the page was set to use.
 
 ### UI Layouts
 
@@ -226,7 +201,7 @@ You also get two different layouts for the UI contents. Layout is separate for e
 
 Grid layout shows it's contents on a grid, each item being 120x110 pixels in size. Items are added to the grid starting from top left corner, and it's then filled left to right, with new rows added as needed.
 
-If you want to skip over a slot on the grid, you can add an Empty-type item
+If you want to skip over a slot on the grid, you can add an Empty-type item.
 
 For actual content (besides the empty item) the Grid layout only supports Button items, each one the same size, with an icon displayed on top, and bit of space for text underneath.
 
@@ -308,7 +283,7 @@ myButton = {
 
 ### Modern UI Themes
 
-To keep the device scripts at least a bit more manageable, and to allow reusing and sharing UI styles and graphics between multiple devices (and levels), Modern UIs use a theme system. Each theme consists of a folder with a deviceTheme Lua file, plus any images to go with it. When setting up your UI, you choose the theme (by name) in the UI table, and that theme will then set the [size](OffGrid:Device_UIs#UI_Sizes "wikilink") and the look of the UI. You are not limited to the theme, though, as most of the same settings can be [overriden](OffGrid:Device_UIs#Overrides "wikilink") for each individual item as needed in your device script.
+To keep the device scripts at least a bit more manageable, and to allow reusing and sharing UI styles and graphics between multiple devices (and levels), Modern UIs use a theme system. Each theme consists of a folder with a deviceTheme Lua file, plus any images to go with it. When setting up your UI, you choose the theme (by name) in the UI table, and that theme will then set the [[Device UIs#UI Sizes|size]] and the look of the UI. You are not limited to the theme, though, as most of the same settings can be [[Device UIs#Overrides|overridden]] for each individual item as needed in your device script.
 
 Theme files should be named as deviceTheme\*.lua, and the game will attempt to load available themes both form the *StreamingAssets/Common/DeviceThemes/* and from a *DeviceThemes* folder in the current mission.
 
@@ -316,7 +291,7 @@ Colors are defined as HTML-style hex codes, in \#RRGGBB or \#RRGGBBAA format.
 
 Image paths in theme scripts should be relative to the theme file itself.
 
-If you know for sure your theme will only ever be used with device UIs that only use one layout, it's safe to leave out the other one in the theme definition. Similarly, you don't need to define every possible item and value here, the theme system will use built-in defaults for any missing value, or in some case tries to re-use a related value you \*do\* have defined. For example if the theme sets button image for the default state, but not for the selected & disabled states, the default state image will be used for all three.
+If you know for sure your theme will only ever be used with device UIs that only use one layout, it's safe to leave out the other one in the theme definition. Similarly, you don't need to define every possible item and value here, the theme system will use built-in defaults for any missing value, or in some case tries to re-use a related value you *do* have defined. For example if the theme sets button image for the default state, but not for the selected & disabled states, the default state image will be used for all three.
 
 ``` lua
 deviceTheme = {
@@ -426,11 +401,11 @@ button_background_image_default = {
 }
 ```
 
-Image paths can be relative to the device script location, or to root of the theme folder. Both the mission folders, and equivalent locations in StremingAssets/Common/, are checked automatically.
+Image paths can be relative to the device script location, or to root of the theme folder. Both the mission folders, and equivalent locations in StreamingAssets/Common/, are checked automatically.
 
 ### Overrides
 
-Most of the things defined in the UI theme can also be set on per-item basis in your device script, effectively overriding that part of the them for that specific UI item. this allows for much more varied content, and dynamically changing things in more complex UIs and devices. Sometimes setting something i the device script rather than the theme is the only way, like when setting the "image"-value for an Image item, or setting the overlay graphic enabled for a specific button on Grid layout.
+Most of the things defined in the UI theme can also be set on per-item basis in your device script, effectively overriding that part of the them for that specific UI item. this allows for much more varied content, and dynamically changing things in more complex UIs and devices. Sometimes setting something in the device script rather than the theme is the only way, like when setting the "image"-value for an Image item, or setting the overlay graphic enabled for a specific button on Grid layout.
 
 See the table below for more details on which exact things can be overridden.
 
@@ -470,16 +445,15 @@ See the table below for more details on which exact things can be overridden.
 | button\_text\_color\_disabled       | X    | X    | X        |                                                              |
 | button\_text\_color\_selected       | X    | X    | X        |                                                              |
 
-Global functions
-----------------
+## Global functions
 
 There are a couple of global functions related to the device UIs:
 
 ### RefreshLocalUI()
 
-*RefreshLocalUI()* triggers the game to re-read the localUI table and update the UI in game accordingly. Call this after making changes to the localUI contents.
+`RefreshLocalUI()` triggers the game to re-read the localUI table and update the UI in game accordingly. Call this after making changes to the localUI contents.
 
-If you want to, you can alternatively set *updateEveryFrame = true* in the UI table, and the UI will then automatically refresh each frame while the game is running, without needing to call the refresh function yourself. This is, in general, not recommended for performance reasons, and it's best to just manually refresh the UI when needed.
+If you want to, you can alternatively set `updateEveryFrame = true` in the UI table, and the UI will then automatically refresh each frame while the game is running, without needing to call the refresh function yourself. This is, in general, not recommended for performance reasons, and it's best to just manually refresh the UI when needed.
 
 ### RefreshRemoteUI()
 
@@ -487,10 +461,9 @@ Same as RefreshLocalUI, but for the *remoteUI*
 
 ### SwitchPage()
 
-*SwitchPage()* is used on the Modern UI type, and triggers the UI to switch to the page you want. For example *SwitchPage("home")* will attmept to switch to a page called "home". (If no such pages exists in the content table, nothing will happen)
+`SwitchPage()` is used on the Modern UI type, and triggers the UI to switch to the page you want. For example `SwitchPage("home")` will attempt to switch to a page called "home". (If no such pages exists in the content table, nothing will happen)
 
-Useful code examples
---------------------
+## Useful code examples
 
 ### Device inventories
 
@@ -517,9 +490,9 @@ device.remoteUI.pages.files = {
 
 Next we want to create a function to populate that page for us automatically.
 
-We'll create a new empty table for the page's contents, and then use the \`GetDeviceInventory()\` global to get all of the device's data inventory contents. This will return us a table of the C\# native DataPointInfo objects, allowing us both to grab useful info form them, and to use the objects as direct references to data on Unity side for API calls to handle data.
+We'll create a new empty table for the page's contents, and then use the `GetDeviceInventory()` global to get all of the device's data inventory contents. This will return us a table of the C# native DataPointInfo objects, allowing us both to grab useful info form them, and to use the objects as direct references to data on Unity side for API calls to handle data.
 
-Then to populate the page, we'll iterate through all of that data table, and create a new UI item for each one. Setting the item type to Button allows us to add onClick function, in which we can add whatever we want to happen when the players clicks on that file. In this case we'll use DataPoints.SaveToPlayerInventroy() so the player can "download" files directly from the device. After creating each button, we insert it into the page's content table.
+Then to populate the page, we'll iterate through all of that data table, and create a new UI item for each one. Setting the item type to Button allows us to add `onClick()` function, in which we can add whatever we want to happen when the players clicks on that file. In this case we'll use `DataPoints.SaveToPlayerInventory()` so the player can "download" files directly from the device. After creating each button, we insert it into the page's content table.
 
 Last, we'll add a back-button so the player has some way to return back to home page.
 
@@ -549,7 +522,7 @@ function UpdateFiles()
 end
 ```
 
-Now all we need to do is add something somewhere for the player to access this page. We'll also want to call the \`UpdateFiles()\` function before switching the page. We can do that, for example, by adding the following button item to the home page:
+Now all we need to do is add something somewhere for the player to access this page. We'll also want to call the `UpdateFiles()` function before switching the page. We can do that, for example, by adding the following button item to the home page:
 
 ``` lua
 files = {
@@ -565,7 +538,7 @@ files = {
 
 ### Combination Lock
 
-This example can also be found in *StreamingAssets/Common/Devices/Templates/Keypad\_touchscreen\_Template.lua**,* and the related theme files are in *StreamingAssets/Common/DeviceThemes/Keypad\_Default/*.
+This example can also be found in *StreamingAssets/Common/Devices/Templates/Keypad\_touchscreen\_Template.lua*, and the related theme files are in *StreamingAssets/Common/DeviceThemes/Keypad\_Default/*.
 
 Rather than defining all of the UI contents manually, this example uses a bit more of Lua scripting to create a numeric lock that can be configured to unlock a specific door with the specified code set in the Configuration section at the top. The code will then automatically generate the number buttons, and even enables the overlay on the buttons used in the specified code to show some fingerprints on the right buttons.
 
