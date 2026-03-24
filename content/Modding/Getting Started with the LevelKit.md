@@ -55,7 +55,7 @@ Your mission folder contains all the files that the game will read when loading 
 | level.lua | This contains metadata about the mission that's read in by the game, see [here](Level.lua) for more information |
 | Scripts/ | The scripts folder should contain all the Lua files that your mission will run |
 | Scripts/Example_mission.lua | This is the main mission script, see [Mission Scripting](Mission Scripting) for more information |
-| Scripts/Conversations/ | Your [conversation scripts](Conversations) should be placed here |
+| Scripts/Conversations/ | Your [conversation scripts](Conversations.md) should be placed here |
 | Scripts/Devices/ | Your [device scripts](Device Scripting ) should be placed here |
 ## Building your First Level
 This will take you on a tour around the wiki and the Levelkit [click here to get started](Building_your_First Level)
