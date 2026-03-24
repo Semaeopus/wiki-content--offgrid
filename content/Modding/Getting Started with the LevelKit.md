@@ -1,6 +1,6 @@
 ## Getting Started
 1. Download [Unity](https://web.archive.org/web/20200803173057/https://store.unity.com/download?ref=update). You will need the most up to date version, and to have installed the following components:... (Fill in required components here) gardless of whether you are using the Win/Mac/Linux build of the Unity Editor.
-2. [Download LevelKit](Download LevelKit)(If you have been given BETAS access then use the properties / BETAS window and put in the password you have been given for both the game *and* for Levelkit - they have to be done separately)
+2. [Download LevelKit](https://store.steampowered.com/app/526720/OFF_GRID__Stealth_Hacking/)) (If you have been given BETAS access then use the properties / BETAS window and put in the password you have been given for both the game *and* for Levelkit - they have to be done separately)
 3. [Open up the LevelKit project in Unity](Open_up_the_LevelKit_project_in Unity) Make sure to MOVE the level kit folder out of Steam apps and into a safe folder in your User account to prevent steam from overwriting in an update
 Now go to the menu Item for Off Grid and select 'LevelKit Tool'
 Where to find the LevelKit Tools window
@@ -51,11 +51,11 @@ Once you have connected to the game click "start" to run your level. Clicking "s
 Your mission folder contains all the files that the game will read when loading your mission, here's an overview:
 | Folder | Description |
 | --- | --- |
-| Bundles/ | This folder shouldn't be edited by users, it contains[Unity asset bundles](https://web.archive.org/web/20200803173057/https://docs.unity3d.com/Manual/AssetBundlesIntro.html) |
-| level.lua | This contains metadata about the mission that's read in by the game, see[here](Level.lua)for more information |
+| Bundles/ | This folder shouldn't be edited by users, it contains [Unity asset bundles](https://web.archive.org/web/20200803173057/https://docs.unity3d.com/Manual/AssetBundlesIntro.html) |
+| level.lua | This contains metadata about the mission that's read in by the game, see [here](Level.lua) for more information |
 | Scripts/ | The scripts folder should contain all the Lua files that your mission will run |
-| Scripts/Example_mission.lua | This is the main mission script, see[Mission Scripting](Mission Scripting)for more information |
-| Scripts/Conversations/ | Your[conversation scripts](Conversations)should be placed here |
-| Scripts/Devices/ | Your[device scripts](Device Scripting)should be placed here |
+| Scripts/Example_mission.lua | This is the main mission script, see [Mission Scripting](Mission Scripting) for more information |
+| Scripts/Conversations/ | Your [conversation scripts](Conversations) should be placed here |
+| Scripts/Devices/ | Your [device scripts](Device Scripting ) should be placed here |
 ## Building your First Level
 This will take you on a tour around the wiki and the Levelkit [click here to get started](Building_your_First Level)
