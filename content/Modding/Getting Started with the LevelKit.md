@@ -54,8 +54,8 @@ Your mission folder contains all the files that the game will read when loading 
 | Bundles/ | This folder shouldn't be edited by users, it contains [Unity asset bundles](https://web.archive.org/web/20200803173057/https://docs.unity3d.com/Manual/AssetBundlesIntro.html) |
 | level.lua | This contains metadata about the mission that's read in by the game, see [here](Level.lua) for more information |
 | Scripts/ | The scripts folder should contain all the Lua files that your mission will run |
-| Scripts/Example_mission.lua | This is the main mission script, see [Mission Scripting](Mission Scripting) for more information |
-| Scripts/Conversations/ | Your [conversation scripts](Conversations.md) should be placed here |
-| Scripts/Devices/ | Your [device scripts](Device Scripting ) should be placed here |
+| Scripts/Example_mission.lua | This is the main mission script, see [Mission Scripting](mission-scripting) for more information |
+| Scripts/Conversations/ | Your [conversation scripts](conversations) should be placed here |
+| Scripts/Devices/ | Your [device scripts](device-scripting ) should be placed here |
 ## Building your First Level
 This will take you on a tour around the wiki and the Levelkit [click here to get started](Building_your_First Level)
